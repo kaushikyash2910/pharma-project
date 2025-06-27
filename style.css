@@ -26,6 +26,10 @@ body {
   color: #fff;
   flex-wrap: wrap;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000; 
+  background-color: #2e7d32; 
 }
 
 .logo {
@@ -202,6 +206,6 @@ body {
     flex-direction: column;
   }
   .footer-column {
-    width: 100%;
-  }
+    width:100%;
+  }
 }
