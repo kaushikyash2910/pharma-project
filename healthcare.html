@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Health Care Products | Pharmacy Website</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #dcedc8, #b2dfdb);
+      margin: 0;
+      padding: 20px;
+    }
+
+    .product-section {
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .product-section h1 {
+      text-align: center;
+      color: #2e7d32;
+      margin-bottom: 30px;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+    }
+
+    .product-card {
+      background-color: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .product-info {
+      padding: 15px;
+    }
+
+    .product-info h3 {
+      margin: 0 0 10px;
+      font-size: 1.2rem;
+      color: #2e7d32;
+    }
+
+    .product-info p {
+      margin: 0 0 10px;
+      font-size: 0.95rem;
+      color: #555;
+    }
+
+    .product-info .price {
+      font-weight: bold;
+      color: #1b5e20;
+    }
+
+    .add-btn {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 8px 15px;
+      background-color: #2e7d32;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .add-btn:hover {
+      background-color: #1b5e20;
+    }
+  </style>
+</head>
+
+<body>
+
+  <section class="product-section">
+    <h1>Health Care Products</h1>
+
+    <div class="product-grid">
+      <!-- One sample card -->
+      <div class="product-card">
+        <img src="https://via.placeholder.com/300x180?text=Vitamin+C" alt="Vitamin C Tablets">
+        <div class="product-info">
+          <h3>Vitamin C Tablets</h3>
+          <p>Boosts immunity and skin health. 60 tablets.</p>
+          <p class="price">₹299</p>
+          <a href="#" class="add-btn" data-name="Vitamin C Tablets" data-price="299" data-type="Tablets">Add to Cart</a>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="https://via.placeholder.com/300x180?text=BP+Monitor" alt="BP Monitor">
+        <div class="product-info">
+          <h3>BP Monitor</h3>
+          <p>Track your blood pressure easily at home.</p>
+          <p class="price">₹1499</p>
+          <a href="#" class="add-btn" data-name="BP Monitor" data-price="1499" data-type="Device">Add to Cart</a>
+        </div>
+      </div>
+
+      <!-- Repeat structure for the remaining 14 items -->
+
+      <div class="product-card">
+        <img src="https://via.placeholder.com/300x180?text=ORS+Pack" alt="ORS Pack">
+        <div class="product-info">
+          <h3>ORS Pack</h3>
+          <p>Prevents dehydration & restores lost minerals.</p>
+          <p class="price">₹49</p>
+          <a href="#" class="add-btn" data-name="ORS Pack" data-price="49" data-type="Supplement">Add to Cart</a>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="https://via.placeholder.com/300x180?text=Herbal+Tea" alt="Herbal Immunity Tea">
+        <div class="product-info">
+          <h3>Immunity Herbal Tea</h3>
+          <p>Natural ingredients to strengthen immunity.</p>
+          <p class="price">₹199</p>
+          <a href="#" class="add-btn" data-name="Immunity Herbal Tea" data-price="199" data-type="Tea">Add to Cart</a>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="https://via.placeholder.com/300x180?text=Thermometer" alt="Digital Thermometer">
+        <div class="product-info">
+          <h3>Digital Thermometer</h3>
+          <p>Quick & accurate body temperature reading.</p>
+          <p class="price">₹299</p>
+          <a href="#" class="add-btn" data-name="Digital Thermometer" data-price="299" data-type="Device">Add to
+            Cart</a>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="https://via.placeholder.com/300x180?text=Face+Mask" alt="N95 Face Mask">
+        <div class="product-info">
+          <h3>N95 Face Mask (Pack of 5)</h3>
+          <p>5-layer protection against airborne viruses.</p>
+          <p class="price">₹399</p>
+          <a href="#" class="add-btn" data-name="N95 Face Mask" data-price="399" data-type="Mask">Add to Cart</a>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="https://via.placeholder.com/300x180?text=Multivitamins" alt="Multivitamin Capsules">
+        <div class="product-info">
+          <h3>Multivitamin Capsules</h3>
+          <p>Daily dose of essential vitamins & minerals.</p>
+          <p class="price">₹349</p>
+          <a href="#" class="add-btn" data-name="Multivitamin Capsules" data-price="349" data-type="Supplement">Add to
+            Cart</a>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="https://via.placeholder.com/300x180?text=Pain+Relief+Spray" alt="Pain Relief Spray">
+        <div class="product-info">
+          <h3>Pain Relief Spray</h3>
+          <p>Instant relief for muscle & joint pain.</p>
+          <p class="price">₹179</p>
+          <a href="#" class="add-btn" data-name="Pain Relief Spray" data-price="179" data-type="Spray">Add to Cart</a>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="https://via.placeholder.com/300x180?text=Oximeter" alt="Oximeter">
+        <div class="product-info">
+          <h3>Oximeter</h3>
+          <p>Accurate blood oxygen and pulse rate reading.</p>
+          <p class="price">₹899</p>
+          <a href="#" class="add-btn" data-name="Oximeter" data-price="899" data-type="Device">Add to Cart</a>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="https://via.placeholder.com/300x180?text=Energy+Drink" alt="Energy Drink">
+        <div class="product-info">
+          <h3>Energy Drink</h3>
+          <p>Rehydrates and restores essential electrolytes.</p>
+          <p class="price">₹99</p>
+          <a href="#" class="add-btn" data-name="Energy Drink" data-price="99" data-type="Drink">Add to Cart</a>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="https://via.placeholder.com/300x180?text=Anti+Allergy" alt="Anti-Allergy Syrup">
+        <div class="product-info">
+          <h3>Anti-Allergy Syrup</h3>
+          <p>Fast relief from sneezing and irritation.</p>
+          <p class="price">₹129</p>
+          <a href="#" class="add-btn" data-name="Anti-Allergy Syrup" data-price="129" data-type="Syrup">Add to Cart</a>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="https://via.placeholder.com/300x180?text=Ayurvedic+Oil" alt="Ayurvedic Massage Oil">
+        <div class="product-info">
+          <h3>Ayurvedic Massage Oil</h3>
+          <p>Relaxing oil for muscle pain & fatigue.</p>
+          <p class="price">₹249</p>
+          <a href="#" class="add-btn" data-name="Ayurvedic Massage Oil" data-price="249" data-type="Oil">Add to Cart</a>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="https://via.placeholder.com/300x180?text=Protein+Powder" alt="Protein Powder">
+        <div class="product-info">
+          <h3>Protein Powder</h3>
+          <p>Nutritional supplement for energy & recovery.</p>
+          <p class="price">₹599</p>
+          <a href="#" class="add-btn" data-name="Protein Powder" data-price="599" data-type="Supplement">Add to Cart</a>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="https://via.placeholder.com/300x180?text=Nasal+Spray" alt="Nasal Spray">
+        <div class="product-info">
+          <h3>Nasal Spray</h3>
+          <p>Clears blocked nose and relieves congestion.</p>
+          <p class="price">₹99</p>
+          <a href="#" class="add-btn" data-name="Nasal Spray" data-price="99" data-type="Spray">Add to Cart</a>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="https://via.placeholder.com/300x180?text=Glucometer+Strips" alt="Glucometer Strips">
+        <div class="product-info">
+          <h3>Glucometer Strips (50 pcs)</h3>
+          <p>Compatible strips for sugar monitoring devices.</p>
+          <p class="price">₹499</p>
+          <a href="#" class="add-btn" data-name="Glucometer Strips" data-price="499" data-type="Strip">Add to Cart</a>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="https://via.placeholder.com/300x180?text=Oral+Rehydration" alt="ORS Pack">
+        <div class="product-info">
+          <h3>ORS Pack</h3>
+          <p>Prevents dehydration & restores lost minerals.</p>
+          <p class="price">₹49</p>
+          <a href="#" class="add-btn" data-name="ORS Pack" data-price="49" data-type="Supplement">Add to Cart</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Cart Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+      const buttons = document.querySelectorAll('.add-btn');
+      buttons.forEach(button => {
+        button.addEventListener('click', (e) => {
+          e.preventDefault();
+          const name = button.dataset.name;
+          const price = parseInt(button.dataset.price);
+          const type = button.dataset.type;
+
+          const existing = cart.find(item => item.name === name);
+
+          if (existing) {
+            existing.quantityAdded += 1;
+          } else {
+            cart.push({
+              name,
+              price,
+              type,
+              quantityAdded: 1
+            });
+          }
+
+          localStorage.setItem('cart', JSON.stringify(cart));
+          alert(`${name} added to cart!`);
+        });
+      });
+    });
+  </script>
+
+</body>
+
+</html>
