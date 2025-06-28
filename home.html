@@ -380,7 +380,36 @@
 
         </div>
     </footer>
-
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          const buttons = document.querySelectorAll(".add-cart-btn");
+      
+          buttons.forEach((btn, index) => {
+            btn.addEventListener("click", () => {
+              const productCard = btn.closest(".product-card");
+              const name = productCard.querySelector("p:nth-of-type(1)").textContent.split(":")[1].trim();
+              const type = productCard.querySelector("p:nth-of-type(2)").textContent.split(":")[1].trim();
+              const quantity = productCard.querySelector("p:nth-of-type(3)").textContent.split(":")[1].trim();
+              const priceText = productCard.querySelector("p:nth-of-type(4)").textContent.split(":")[1].trim();
+              const price = parseInt(priceText.replace("Rs", ""));
+      
+              const product = { name, type, quantity, price, quantityAdded: 1 };
+      
+              let cart = JSON.parse(localStorage.getItem("cart")) || [];
+      
+              const existing = cart.find(item => item.name === name);
+              if (existing) {
+                existing.quantityAdded += 1;
+              } else {
+                cart.push(product);
+              }
+      
+              localStorage.setItem("cart", JSON.stringify(cart));
+              alert(`${name} added to cart.`);
+            });
+          });
+        });
+</script>
 </body>
 
 </html>
