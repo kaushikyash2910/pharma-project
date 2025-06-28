@@ -101,7 +101,7 @@ body {
   background-color: #f1f1f1;
 }
 
-.cards, .cards-2, .cards-3 {
+.cards, .cards-2, .cards-3,.cards-4 {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
