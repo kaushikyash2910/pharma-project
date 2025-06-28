@@ -87,6 +87,34 @@
     .add-btn:hover {
       background-color: #1b5e20;
     }
+    .cart-popup {
+position: fixed;
+top: 20px;
+right: 20px;
+background-color: #2e7d32;
+color: white;
+padding: 15px 20px;
+border-radius: 10px;
+box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+z-index: 9999;
+display: none;
+animation: slideIn 0.4s ease;
+}
+
+.cart-popup button {
+background-color: white;
+color: #2e7d32;
+border: none;
+margin-top: 10px;
+padding: 6px 10px;
+border-radius: 6px;
+cursor: pointer;
+font-weight: bold;
+}
+
+.cart-popup button:hover {
+background-color: #a5d6a7;
+}
   </style>
 </head>
 
@@ -262,8 +290,11 @@
 
     </div>
   </section>
+  <div id="cart-notification" class="cart-popup">
+    <p id="cart-message">Item added to cart</p>
+    <button onclick="window.location.href='cart.html'">Go to Cart</button>
+  </div>
 
-  <!-- Cart Script -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const cart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -290,9 +321,21 @@
           }
 
           localStorage.setItem('cart', JSON.stringify(cart));
-          alert(`${name} added to cart!`);
+          
+          showCartPopup(name);
         });
       });
+      function showCartPopup(productName) {
+      const popup = document.getElementById("cart-notification");
+      const msg = document.getElementById("cart-message");
+
+      msg.textContent = `"${productName}" added to cart`;
+      popup.style.display = "block";
+
+      setTimeout(() => {
+        popup.style.display = "none";
+      }, 3000);
+    }
     });
   </script>
 
