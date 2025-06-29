@@ -2,157 +2,191 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Health Care Products | Pharmacy Website</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(to right, #dcedc8, #b2dfdb);
-            margin: 0;
-            padding: 20px;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Health Care Products | Pharmacy Website</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #dcedc8, #b2dfdb);
+      margin: 0;
+      padding: 20px;
+    }
 
-        .product-section {
-            max-width: 1200px;
-            margin: auto;
-        }
+    .header-with-cart {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: auto;
+      margin-bottom: 20px;
+      padding: 0 10px;
+    }
 
-        .product-section h1 {
-            text-align: center;
-            color: #2e7d32;
-            margin-bottom: 30px;
-        }
+    .header-with-cart h1 {
+      font-size: 2.5rem;
+      color: #2d9544;
+      margin: 0;
+    }
 
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-        }
+    .cart-icon {
+      font-size: 1.8rem;
+      color: #2d9544;
+      cursor: pointer;
+      position: relative;
+    }
 
-        .product-card {
-            background-color: #ffffff;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-            overflow: hidden;
-            transition: transform 0.3s ease;
-        }
+    .cart-icon::after {
+      content: attr(data-count);
+      position: absolute;
+      top: -8px;
+      right: -10px;
+      background: red;
+      color: white;
+      border-radius: 50%;
+      font-size: 0.75rem;
+      padding: 2px 6px;
+      display: none;
+    }
 
-        .product-card:hover {
-            transform: translateY(-5px);
-        }
+    .product-section {
+      max-width: 1200px;
+      margin: auto;
+    }
 
-        .product-card img {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-        }
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+    }
 
-        .product-info {
-            padding: 15px;
-        }
+    .product-card {
+      background-color: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
 
-        .product-info h3 {
-            margin: 0 0 10px;
-            font-size: 1.2rem;
-            color: #2e7d32;
-        }
+    .product-card:hover {
+      transform: translateY(-5px);
+    }
 
-        .product-info p {
-            margin: 0 0 10px;
-            font-size: 0.95rem;
-            color: #555;
-        }
+    .product-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
 
-        .product-info .price {
-            font-weight: bold;
-            color: #1b5e20;
-        }
+    .product-info {
+      padding: 15px;
+    }
 
-        .add-btn {
-            display: inline-block;
-            margin-top: 10px;
-            padding: 8px 15px;
-            background-color: #2e7d32;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            text-decoration: none;
-            font-size: 0.9rem;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
+    .product-info h3 {
+      margin: 0 0 10px;
+      font-size: 1.2rem;
+      color: #2e7d32;
+    }
 
-        .add-btn:hover {
-            background-color: #1b5e20;
-        }
+    .product-info p {
+      margin: 0 0 10px;
+      font-size: 0.95rem;
+      color: #555;
+    }
 
-        .cart-popup {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            background-color: #2e7d32;
-            color: white;
-            padding: 15px 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-            z-index: 9999;
-            display: none;
-            animation: slideIn 0.4s ease;
-        }
+    .product-info .price {
+      font-weight: bold;
+      color: #1b5e20;
+    }
 
-        .cart-popup button {
-            background-color: white;
-            color: #2e7d32;
-            border: none;
-            margin-top: 10px;
-            padding: 6px 10px;
-            border-radius: 6px;
-            cursor: pointer;
-            font-weight: bold;
-        }
+    .add-btn {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 8px 15px;
+      background-color: #2e7d32;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
 
-        .cart-popup button:hover {
-            background-color: #a5d6a7;
-        }
+    .add-btn:hover {
+      background-color: #1b5e20;
+    }
 
-        .qty-controls {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-top: 10px;
-        }
+    .cart-popup {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background-color: #2e7d32;
+      color: white;
+      padding: 15px 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      z-index: 9999;
+      display: none;
+      animation: slideIn 0.4s ease;
+    }
 
-        .qty-btn {
-            background-color: #2e7d32;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            font-size: 1rem;
-            padding: 5px 10px;
-            cursor: pointer;
-        }
+    .cart-popup button {
+      background-color: white;
+      color: #2e7d32;
+      border: none;
+      margin-top: 10px;
+      padding: 6px 10px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+    }
 
-        .qty-btn:hover {
-            background-color: #1b5e20;
-        }
+    .cart-popup button:hover {
+      background-color: #a5d6a7;
+    }
 
-        .qty-value {
-            font-weight: bold;
-            font-size: 1rem;
-            min-width: 20px;
-            text-align: center;
-        }
-    </style>
+    .qty-controls {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .qty-btn {
+      background-color: #2e7d32;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+
+    .qty-btn:hover {
+      background-color: #1b5e20;
+    }
+
+    .qty-value {
+      font-weight: bold;
+      font-size: 1rem;
+      min-width: 20px;
+      text-align: center;
+    }
+  </style>
 </head>
 
 <body>
 
-    <section class="product-section">
-        <h1>Health Care Products</h1>
+  <div class="header-with-cart">
+    <h1>Health Care Products</h1>
+    <div class="cart-icon" onclick="window.location.href='cart.html'" id="cart-icon" data-count="0">Cart 🛒</div>
+  </div>
 
-        <div class="product-grid">
+  <section class="product-section">
+    <div class="product-grid">
+       
             <div class="product-card">
                 <img src="https://via.placeholder.com/300x180?text=Vitamin+C" alt="Vitamin C Tablets">
                 <div class="product-info">
@@ -330,109 +364,142 @@
                 </div>
             </div>
 
-        </div>
-    </section>
-    <div id="cart-notification" class="cart-popup">
-        <p id="cart-message">Item added to cart</p>
-        <button onclick="window.location.href='cart.html'">Go to Cart</button>
+       
+
     </div>
+  </section>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+  <div id="cart-notification" class="cart-popup">
+    <p id="cart-message">Item added to cart</p>
+    <button onclick="window.location.href='cart.html'">Go to Cart</button>
+  </div>
 
-            const buttons = document.querySelectorAll('.add-btn');
-            buttons.forEach(button => {
-                const name = button.dataset.name;
-                const price = parseInt(button.dataset.price);
-                const type = button.dataset.type;
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-                const productCard = button.closest('.product-card');
-                const existingItem = cart.find(item => item.name === name);
+      const buttons = document.querySelectorAll('.add-btn');
+      buttons.forEach(button => {
+        const name = button.dataset.name;
+        const price = parseInt(button.dataset.price);
+        const type = button.dataset.type;
 
-                if (existingItem) {
-                    renderQuantityControls(productCard, existingItem.quantityAdded, name, price, type);
-                }
+        const productCard = button.closest('.product-card');
+        const existingItem = cart.find(item => item.name === name);
 
-                button.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    const existing = cart.find(item => item.name === name);
-                    if (existing) {
-                        existing.quantityAdded += 1;
-                    } else {
-                        cart.push({ name, price, type, quantityAdded: 1 });
-                    }
+        if (existingItem) {
+          renderQuantityControls(productCard, existingItem.quantityAdded, name, price, type);
+        }
 
-                    localStorage.setItem('cart', JSON.stringify(cart));
-                    renderQuantityControls(productCard, existing ? existing.quantityAdded : 1, name, price, type);
-                    showCartPopup(name);
-                });
-            });
+        button.addEventListener('click', (e) => {
+          e.preventDefault();
+          const existing = cart.find(item => item.name === name);
+          if (existing) {
+            existing.quantityAdded += 1;
+          } else {
+            cart.push({ name, price, type, quantityAdded: 1 });
+          }
 
-            function renderQuantityControls(card, quantity, name, price, type) {
-                const controlHTML = `
+          localStorage.setItem('cart', JSON.stringify(cart));
+          renderQuantityControls(productCard, existing ? existing.quantityAdded : 1, name, price, type);
+          showCartPopup(name);
+          updateCartCount();
+        });
+      });
+
+      function renderQuantityControls(card, quantity, name, price, type) {
+        const controlHTML = `
           <div class="qty-controls">
             <button class="qty-btn" data-action="decrease">−</button>
             <span class="qty-value">${quantity}</span>
             <button class="qty-btn" data-action="increase">+</button>
           </div>
         `;
-                card.querySelector('.add-btn').outerHTML = controlHTML;
+        card.querySelector('.add-btn').outerHTML = controlHTML;
 
-                const controls = card.querySelector('.qty-controls');
-                const valueSpan = controls.querySelector('.qty-value');
+        const controls = card.querySelector('.qty-controls');
+        const valueSpan = controls.querySelector('.qty-value');
 
-                controls.querySelectorAll('.qty-btn').forEach(btn => {
-                    btn.addEventListener('click', () => {
-                        const action = btn.dataset.action;
-                        let item = cart.find(i => i.name === name);
-                        if (action === 'increase') {
-                            item.quantityAdded += 1;
-                        } else if (action === 'decrease') {
-                            item.quantityAdded -= 1;
-                            if (item.quantityAdded <= 0) {
-                                cart = cart.filter(i => i.name !== name);
-                                controls.outerHTML = `<a href="#" class="add-btn" data-name="${name}" data-price="${price}" data-type="${type}">Add to Cart</a>`;
-                                attachButtonEvent(card.querySelector('.add-btn'));
-                                localStorage.setItem('cart', JSON.stringify(cart));
-                                return;
-                            }
-                        }
-                        valueSpan.textContent = item.quantityAdded;
-                        localStorage.setItem('cart', JSON.stringify(cart));
-                    });
-                });
+        controls.querySelectorAll('.qty-btn').forEach(btn => {
+          btn.addEventListener('click', () => {
+            const action = btn.dataset.action;
+            let item = cart.find(i => i.name === name);
+            if (action === 'increase') {
+              item.quantityAdded += 1;
+            } else if (action === 'decrease') {
+              item.quantityAdded -= 1;
+              if (item.quantityAdded <= 0) {
+                cart = cart.filter(i => i.name !== name);
+                controls.outerHTML = `<a href="#" class="add-btn" data-name="${name}" data-price="${price}" data-type="${type}">Add to Cart</a>`;
+                attachButtonEvent(card.querySelector('.add-btn'));
+                localStorage.setItem('cart', JSON.stringify(cart));
+                updateCartCount();
+                return;
+              }
             }
-
-            function attachButtonEvent(button) {
-                const name = button.dataset.name;
-                const price = parseInt(button.dataset.price);
-                const type = button.dataset.type;
-                const productCard = button.closest('.product-card');
-
-                button.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    cart.push({ name, price, type, quantityAdded: 1 });
-                    localStorage.setItem('cart', JSON.stringify(cart));
-                    renderQuantityControls(productCard, 1, name, price, type);
-                    showCartPopup(name);
-                });
-            }
-
-            function showCartPopup(productName) {
-                const popup = document.getElementById("cart-notification");
-                const msg = document.getElementById("cart-message");
-
-                msg.textContent = `"${productName}" added to cart`;
-                popup.style.display = "block";
-
-                setTimeout(() => {
-                    popup.style.display = "none";
-                }, 3000);
-            }
+            valueSpan.textContent = item.quantityAdded;
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartCount();
+          });
         });
-    </script>
+      }
 
+      function attachButtonEvent(button) {
+        const name = button.dataset.name;
+        const price = parseInt(button.dataset.price);
+        const type = button.dataset.type;
+        const productCard = button.closest('.product-card');
+
+        button.addEventListener('click', (e) => {
+          e.preventDefault();
+          cart.push({ name, price, type, quantityAdded: 1 });
+          localStorage.setItem('cart', JSON.stringify(cart));
+          renderQuantityControls(productCard, 1, name, price, type);
+          showCartPopup(name);
+          updateCartCount();
+        });
+      }
+
+      function showCartPopup(productName) {
+        const popup = document.getElementById("cart-notification");
+        const msg = document.getElementById("cart-message");
+
+        msg.textContent = `"${productName}" added to cart`;
+        popup.style.display = "block";
+
+        setTimeout(() => {
+          popup.style.display = "none";
+        }, 3000);
+      }
+
+      function updateCartCount() {
+        const cartIcon = document.getElementById('cart-icon');
+        const currentCart = JSON.parse(localStorage.getItem('cart')) || [];
+        const totalItems = currentCart.reduce((sum, item) => sum + item.quantityAdded, 0);
+        cartIcon.setAttribute('data-count', totalItems);
+        cartIcon.style.display = 'inline-block';
+        cartIcon.style.setProperty('--badge-display', totalItems > 0 ? 'inline' : 'none');
+        cartIcon.style.setProperty('display', 'inline-block');
+        cartIcon.style.setProperty('opacity', '1');
+        cartIcon.style.setProperty('visibility', 'visible');
+        cartIcon.style.setProperty('position', 'relative');
+        cartIcon.style.setProperty('overflow', 'visible');
+        if (totalItems > 0) {
+          cartIcon.style.setProperty('--badge-display', 'inline');
+          cartIcon.style.setProperty('display', 'inline-block');
+        } else {
+          cartIcon.style.setProperty('--badge-display', 'none');
+        }
+
+        const afterStyle = window.getComputedStyle(cartIcon, '::after');
+        if (afterStyle) {
+          cartIcon.style.setProperty('content', `"${totalItems}"`);
+        }
+      }
+
+      updateCartCount();
+    });
+  </script>
 
 </body>
 
