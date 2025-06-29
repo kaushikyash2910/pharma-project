@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <title>Checkout | Pharmacy Website</title>
@@ -41,7 +42,8 @@
       margin-bottom: 30px;
     }
 
-    th, td {
+    th,
+    td {
       padding: 12px;
       text-align: center;
       border-bottom: 1px solid #ddd;
@@ -62,7 +64,8 @@
       margin-bottom: 8px;
     }
 
-    input, textarea {
+    input,
+    textarea {
       width: 100%;
       padding: 10px;
       border: 1px solid #ccc;
@@ -101,12 +104,13 @@
     }
   </style>
 </head>
+
 <body>
 
   <h1>Checkout</h1>
 
   <div class="checkout-container">
-    
+
     <div class="order-summary-section">
       <h2 class="section-title">🧾 Order Summary</h2>
       <div id="summary-container"></div>
@@ -184,7 +188,7 @@
       summaryContainer.innerHTML = tableHTML;
     }
 
-    document.getElementById('checkout-form').addEventListener('submit', function(e) {
+    document.getElementById('checkout-form').addEventListener('submit', function (e) {
       e.preventDefault();
       alert('✅ Order placed successfully!');
       localStorage.removeItem('cart');
@@ -194,4 +198,5 @@
     renderOrderSummary();
   </script>
 </body>
+
 </html>
