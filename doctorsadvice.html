@@ -36,7 +36,7 @@
       display: flex;
       align-items: center;
       gap: 20px;
-      flex-wrap: wrap;
+
     }
 
     img {
@@ -60,6 +60,104 @@
       margin-top: 20px;
     }
 
+    .footer {
+      background-color: #e8f5e9;
+      color: #1b5e20;
+      padding: 60px 20px 20px;
+      font-family: 'Poppins', sans-serif;
+      border-top: 3px solid #a5d6a7;
+    }
+
+    .footer-main {
+      max-width: 1200px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 40px;
+      padding-bottom: 30px;
+    }
+
+    .footer-brand h2 {
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+      color: #2e7d32;
+    }
+
+    .footer-brand p {
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .footer-highlight h3,
+    .footer-newsletter h3 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+      color: #2e7d32;
+    }
+
+    .footer-highlight ul {
+      padding-left: 20px;
+    }
+
+    .footer-highlight ul li {
+      margin-bottom: 8px;
+      font-size: 0.95rem;
+    }
+
+    .footer-newsletter input {
+      padding: 10px;
+      width: 100%;
+      max-width: 250px;
+      border: 1px solid #a5d6a7;
+      border-radius: 6px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      font-size: 0.95rem;
+    }
+
+    .footer-newsletter button {
+      background-color: #2e7d32;
+      color: white;
+      padding: 8px 20px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .footer-newsletter button:hover {
+      background-color: #1b5e20;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #388e3c;
+      border-top: 1px solid #c8e6c9;
+      padding-top: 20px;
+    }
+
+    #more {
+      display: none;
+    }
+
+    #dots {
+      display: inline;
+    }
+
+    #myBtn {
+      background-color: #2e7d32;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    #myBtn:hover {
+      background-color: #1b5e20;
+    }
   </style>
 </head>
 
@@ -75,13 +173,60 @@
   <section>
     <h2>Meet Our Expert</h2>
     <div class="doctor-profile">
-      <img src="doctor-placeholder.jpg" alt="Dr. Anjali Mehta">
+      <img src="dj67fvi8_kk-aggarwal-twitter_295x200_18_May_21.jpg" alt="Dr. K.K. Aggarwal" />
       <div>
-        <h3>Dr. Anjali Mehta</h3>
-        <p><strong>Qualification:</strong> MBBS, MD (Internal Medicine)</p>
-        <p><strong>Experience:</strong> 15+ years of treating chronic and lifestyle-related illnesses</p>
-        <p><strong>Philosophy:</strong> “Preventive care and early awareness are the cornerstones of a healthy life.”
-        </p>
+        <h3>Dr. K.K. Aggarwal</h3>
+        <div id="content">
+          <span id="dots">
+            <p>
+              Qualifications: MBBS: Nagpur University (1979) MD (Medicine):
+              Mahatma Gandhi Institute of Medical Sciences, Wardha (1983) Gold
+              Medalist and Topper: Throughout his medical career at Nagpur
+              University and MGIMS.
+            </p>
+          </span>
+          <span id="more">
+            <h3>Qualifications:</h3>
+            <p>
+              MBBS: Nagpur University (1979) MD (Medicine): Mahatma Gandhi
+              Institute of Medical Sciences, Wardha (1983) Gold Medalist and
+              Topper: Throughout his medical career at Nagpur University and
+              MGIMS.
+            </p>
+
+            <h3>Experience:</h3>
+            <p>
+              Dr. K.K. Aggarwal had an extensive and diverse professional
+              journey: Senior Consultant, Physician, and Cardiologist:
+              Moolchand Medcity, New Delhi (until 2017). He was a pioneer in
+              using clot busters for acute myocardial infarction (1984) and
+              introduced color Doppler echocardiography in North India (1987).
+              National President, Indian Medical Association (IMA):
+              (2016-2017) President, Heart Care Foundation of India (HCFI): He
+              founded and led this organization dedicated to public health.
+              President, Confederation of Medical Associations in Asia and
+              Oceania (CMAAO): (2019-2020) Honorary Secretary-General, Medical
+              Council of India (MCI).
+            </p>
+
+            <h3>Philosophy:</h3>
+            <p>
+              Dr. K.K. Aggarwal's philosophy on health and medicine was deeply
+              rooted in a holistic and public-centric approach, often blending
+              modern medical science with traditional Indian wisdom. Key
+              aspects of his philosophy include: "One Health" Concept: He
+              strongly believed in the interconnectedness of human health with
+              animal health, plant health, and the environment. This reflects
+              the ancient Vedic saying, "VasudhaivaKutumbakam" (the whole
+              world is my family), and
+              "Yathapindetathabrahmande,yathabrahmandetathapinde" (as is the
+              microcosm, so is the macrocosm). He emphasized that the human
+              body is a replica of the universe and that wellness should
+              prioritize this interconnectedness.
+            </p>
+          </span>
+        </div>
+        <button onclick="myFunction()" id="myBtn">Read More</button>
       </div>
     </div>
   </section>
@@ -179,6 +324,54 @@
       your doctor or pharmacist for individual diagnosis or treatment. In case of medical emergency, contact emergency
       services or visit your nearest hospital.</p>
   </section>
+  <footer class="footer">
+    <div class="footer-main">
+      <div class="footer-brand">
+        <h2>HealthCare+</h2>
+        <p>Your wellness, our priority. We deliver trusted pharmacy and wellness products, powered by care and quality.
+        </p>
+      </div>
+
+      <div class="footer-highlight">
+        <h3>Why Choose Us?</h3>
+        <ul>
+          <li>✔️ 100% Genuine Medicines</li>
+          <li>✔️ Fast & Safe Delivery</li>
+          <li>✔️ 24/7 Support & Consultation</li>
+          <li>✔️ Trusted by 1 Lakh+ Users</li>
+        </ul>
+      </div>
+
+      <div class="footer-newsletter">
+        <h3>Stay Healthy. Stay Updated.</h3>
+        <p>Subscribe to get health tips and special offers straight to your inbox.</p>
+        <input type="email" placeholder="Enter your email" />
+        <button>Subscribe</button>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 HealthCare+. All rights reserved. | Designed with ❤️ for healthy living.</p>
+    </div>
+  </footer>
+  <script> function myFunction() {
+      var dots = document.getElementById("dots");
+      var moreText = document.getElementById("more");
+      var btnText = document.getElementById("myBtn");
+
+      if (dots.style.display === "none") {
+        dots.style.display = "inline";
+        btnText.innerHTML = "Read more";
+        moreText.style.display = "none";
+      } else {
+        dots.style.display = "none";
+        btnText.innerHTML = "Read less";
+        moreText.style.display = "inline";
+      }
+    }</script>
+
+
+
 
 </body>
 
