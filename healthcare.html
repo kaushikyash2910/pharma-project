@@ -174,6 +174,54 @@
       min-width: 20px;
       text-align: center;
     }
+
+    .footer {
+      background: #f9fbe7;
+      color: #33691e;
+      padding: 60px 20px 30px;
+      font-family: 'Poppins', sans-serif;
+      border-top: 3px solid #c5e1a5;
+    }
+
+    .footer-wrapper {
+      max-width: 1200px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+    }
+
+    .footer-box h3 {
+      font-size: 1.25rem;
+      margin-bottom: 12px;
+      color: #558b2f;
+    }
+
+    .footer-box p {
+      font-size: 1rem;
+      line-height: 1.6;
+      margin: 0 0 10px;
+    }
+
+    .footer-box ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footer-box ul li {
+      font-size: 0.95rem;
+      margin-bottom: 6px;
+    }
+
+    .footer-tagline {
+      text-align: center;
+      border-top: 1px solid #dcedc8;
+      margin-top: 40px;
+      padding-top: 20px;
+      font-size: 0.95rem;
+      color: #689f38;
+    }
   </style>
 </head>
 
@@ -186,185 +234,184 @@
 
   <section class="product-section">
     <div class="product-grid">
-       
-            <div class="product-card">
-                <img src="https://via.placeholder.com/300x180?text=Vitamin+C" alt="Vitamin C Tablets">
-                <div class="product-info">
-                    <h3>Vitamin C Tablets</h3>
-                    <p>Boosts immunity and skin health. 60 tablets.</p>
-                    <p class="price">₹299</p>
-                    <a href="#" class="add-btn" data-name="Vitamin C Tablets" data-price="299" data-type="Tablets">Add
-                        to Cart</a>
-                </div>
-            </div>
 
-            <div class="product-card">
-                <img src="https://via.placeholder.com/300x180?text=BP+Monitor" alt="BP Monitor">
-                <div class="product-info">
-                    <h3>BP Monitor</h3>
-                    <p>Track your blood pressure easily at home.</p>
-                    <p class="price">₹1499</p>
-                    <a href="#" class="add-btn" data-name="BP Monitor" data-price="1499" data-type="Device">Add to
-                        Cart</a>
-                </div>
-            </div>
+      <div class="product-card">
+        <img src="https://via.placeholder.com/300x180?text=Vitamin+C" alt="Vitamin C Tablets">
+        <div class="product-info">
+          <h3>Vitamin C Tablets</h3>
+          <p>Boosts immunity and skin health. 60 tablets.</p>
+          <p class="price">₹299</p>
+          <a href="#" class="add-btn" data-name="Vitamin C Tablets" data-price="299" data-type="Tablets">Add
+            to Cart</a>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="https://via.placeholder.com/300x180?text=BP+Monitor" alt="BP Monitor">
+        <div class="product-info">
+          <h3>BP Monitor</h3>
+          <p>Track your blood pressure easily at home.</p>
+          <p class="price">₹1499</p>
+          <a href="#" class="add-btn" data-name="BP Monitor" data-price="1499" data-type="Device">Add to
+            Cart</a>
+        </div>
+      </div>
 
 
-            <div class="product-card">
-                <img src="https://via.placeholder.com/300x180?text=ORS+Pack" alt="ORS Pack">
-                <div class="product-info">
-                    <h3>ORS Pack</h3>
-                    <p>Prevents dehydration & restores lost minerals.</p>
-                    <p class="price">₹49</p>
-                    <a href="#" class="add-btn" data-name="ORS Pack" data-price="49" data-type="Supplement">Add to
-                        Cart</a>
-                </div>
-            </div>
-            <div class="product-card">
-                <img src="https://via.placeholder.com/300x180?text=Herbal+Tea" alt="Herbal Immunity Tea">
-                <div class="product-info">
-                    <h3>Immunity Herbal Tea</h3>
-                    <p>Natural ingredients to strengthen immunity.</p>
-                    <p class="price">₹199</p>
-                    <a href="#" class="add-btn" data-name="Immunity Herbal Tea" data-price="199" data-type="Tea">Add to
-                        Cart</a>
-                </div>
-            </div>
+      <div class="product-card">
+        <img src="https://via.placeholder.com/300x180?text=ORS+Pack" alt="ORS Pack">
+        <div class="product-info">
+          <h3>ORS Pack</h3>
+          <p>Prevents dehydration & restores lost minerals.</p>
+          <p class="price">₹49</p>
+          <a href="#" class="add-btn" data-name="ORS Pack" data-price="49" data-type="Supplement">Add to
+            Cart</a>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="https://via.placeholder.com/300x180?text=Herbal+Tea" alt="Herbal Immunity Tea">
+        <div class="product-info">
+          <h3>Immunity Herbal Tea</h3>
+          <p>Natural ingredients to strengthen immunity.</p>
+          <p class="price">₹199</p>
+          <a href="#" class="add-btn" data-name="Immunity Herbal Tea" data-price="199" data-type="Tea">Add to
+            Cart</a>
+        </div>
+      </div>
 
-            <div class="product-card">
-                <img src="https://via.placeholder.com/300x180?text=Thermometer" alt="Digital Thermometer">
-                <div class="product-info">
-                    <h3>Digital Thermometer</h3>
-                    <p>Quick & accurate body temperature reading.</p>
-                    <p class="price">₹299</p>
-                    <a href="#" class="add-btn" data-name="Digital Thermometer" data-price="299" data-type="Device">Add
-                        to
-                        Cart</a>
-                </div>
-            </div>
+      <div class="product-card">
+        <img src="https://via.placeholder.com/300x180?text=Thermometer" alt="Digital Thermometer">
+        <div class="product-info">
+          <h3>Digital Thermometer</h3>
+          <p>Quick & accurate body temperature reading.</p>
+          <p class="price">₹299</p>
+          <a href="#" class="add-btn" data-name="Digital Thermometer" data-price="299" data-type="Device">Add
+            to
+            Cart</a>
+        </div>
+      </div>
 
-            <div class="product-card">
-                <img src="https://via.placeholder.com/300x180?text=Face+Mask" alt="N95 Face Mask">
-                <div class="product-info">
-                    <h3>N95 Face Mask (Pack of 5)</h3>
-                    <p>5-layer protection against airborne viruses.</p>
-                    <p class="price">₹399</p>
-                    <a href="#" class="add-btn" data-name="N95 Face Mask" data-price="399" data-type="Mask">Add to
-                        Cart</a>
-                </div>
-            </div>
+      <div class="product-card">
+        <img src="https://via.placeholder.com/300x180?text=Face+Mask" alt="N95 Face Mask">
+        <div class="product-info">
+          <h3>N95 Face Mask (Pack of 5)</h3>
+          <p>5-layer protection against airborne viruses.</p>
+          <p class="price">₹399</p>
+          <a href="#" class="add-btn" data-name="N95 Face Mask" data-price="399" data-type="Mask">Add to
+            Cart</a>
+        </div>
+      </div>
 
-            <div class="product-card">
-                <img src="https://via.placeholder.com/300x180?text=Multivitamins" alt="Multivitamin Capsules">
-                <div class="product-info">
-                    <h3>Multivitamin Capsules</h3>
-                    <p>Daily dose of essential vitamins & minerals.</p>
-                    <p class="price">₹349</p>
-                    <a href="#" class="add-btn" data-name="Multivitamin Capsules" data-price="349"
-                        data-type="Supplement">Add to
-                        Cart</a>
-                </div>
-            </div>
+      <div class="product-card">
+        <img src="https://via.placeholder.com/300x180?text=Multivitamins" alt="Multivitamin Capsules">
+        <div class="product-info">
+          <h3>Multivitamin Capsules</h3>
+          <p>Daily dose of essential vitamins & minerals.</p>
+          <p class="price">₹349</p>
+          <a href="#" class="add-btn" data-name="Multivitamin Capsules" data-price="349" data-type="Supplement">Add to
+            Cart</a>
+        </div>
+      </div>
 
-            <div class="product-card">
-                <img src="https://via.placeholder.com/300x180?text=Pain+Relief+Spray" alt="Pain Relief Spray">
-                <div class="product-info">
-                    <h3>Pain Relief Spray</h3>
-                    <p>Instant relief for muscle & joint pain.</p>
-                    <p class="price">₹179</p>
-                    <a href="#" class="add-btn" data-name="Pain Relief Spray" data-price="179" data-type="Spray">Add to
-                        Cart</a>
-                </div>
-            </div>
+      <div class="product-card">
+        <img src="https://via.placeholder.com/300x180?text=Pain+Relief+Spray" alt="Pain Relief Spray">
+        <div class="product-info">
+          <h3>Pain Relief Spray</h3>
+          <p>Instant relief for muscle & joint pain.</p>
+          <p class="price">₹179</p>
+          <a href="#" class="add-btn" data-name="Pain Relief Spray" data-price="179" data-type="Spray">Add to
+            Cart</a>
+        </div>
+      </div>
 
-            <div class="product-card">
-                <img src="https://via.placeholder.com/300x180?text=Oximeter" alt="Oximeter">
-                <div class="product-info">
-                    <h3>Oximeter</h3>
-                    <p>Accurate blood oxygen and pulse rate reading.</p>
-                    <p class="price">₹899</p>
-                    <a href="#" class="add-btn" data-name="Oximeter" data-price="899" data-type="Device">Add to Cart</a>
-                </div>
-            </div>
+      <div class="product-card">
+        <img src="https://via.placeholder.com/300x180?text=Oximeter" alt="Oximeter">
+        <div class="product-info">
+          <h3>Oximeter</h3>
+          <p>Accurate blood oxygen and pulse rate reading.</p>
+          <p class="price">₹899</p>
+          <a href="#" class="add-btn" data-name="Oximeter" data-price="899" data-type="Device">Add to Cart</a>
+        </div>
+      </div>
 
-            <div class="product-card">
-                <img src="https://via.placeholder.com/300x180?text=Energy+Drink" alt="Energy Drink">
-                <div class="product-info">
-                    <h3>Energy Drink</h3>
-                    <p>Rehydrates and restores essential electrolytes.</p>
-                    <p class="price">₹99</p>
-                    <a href="#" class="add-btn" data-name="Energy Drink" data-price="99" data-type="Drink">Add to
-                        Cart</a>
-                </div>
-            </div>
+      <div class="product-card">
+        <img src="https://via.placeholder.com/300x180?text=Energy+Drink" alt="Energy Drink">
+        <div class="product-info">
+          <h3>Energy Drink</h3>
+          <p>Rehydrates and restores essential electrolytes.</p>
+          <p class="price">₹99</p>
+          <a href="#" class="add-btn" data-name="Energy Drink" data-price="99" data-type="Drink">Add to
+            Cart</a>
+        </div>
+      </div>
 
-            <div class="product-card">
-                <img src="https://via.placeholder.com/300x180?text=Anti+Allergy" alt="Anti-Allergy Syrup">
-                <div class="product-info">
-                    <h3>Anti-Allergy Syrup</h3>
-                    <p>Fast relief from sneezing and irritation.</p>
-                    <p class="price">₹129</p>
-                    <a href="#" class="add-btn" data-name="Anti-Allergy Syrup" data-price="129" data-type="Syrup">Add to
-                        Cart</a>
-                </div>
-            </div>
+      <div class="product-card">
+        <img src="https://via.placeholder.com/300x180?text=Anti+Allergy" alt="Anti-Allergy Syrup">
+        <div class="product-info">
+          <h3>Anti-Allergy Syrup</h3>
+          <p>Fast relief from sneezing and irritation.</p>
+          <p class="price">₹129</p>
+          <a href="#" class="add-btn" data-name="Anti-Allergy Syrup" data-price="129" data-type="Syrup">Add to
+            Cart</a>
+        </div>
+      </div>
 
-            <div class="product-card">
-                <img src="https://via.placeholder.com/300x180?text=Ayurvedic+Oil" alt="Ayurvedic Massage Oil">
-                <div class="product-info">
-                    <h3>Ayurvedic Massage Oil</h3>
-                    <p>Relaxing oil for muscle pain & fatigue.</p>
-                    <p class="price">₹249</p>
-                    <a href="#" class="add-btn" data-name="Ayurvedic Massage Oil" data-price="249" data-type="Oil">Add
-                        to Cart</a>
-                </div>
-            </div>
+      <div class="product-card">
+        <img src="https://via.placeholder.com/300x180?text=Ayurvedic+Oil" alt="Ayurvedic Massage Oil">
+        <div class="product-info">
+          <h3>Ayurvedic Massage Oil</h3>
+          <p>Relaxing oil for muscle pain & fatigue.</p>
+          <p class="price">₹249</p>
+          <a href="#" class="add-btn" data-name="Ayurvedic Massage Oil" data-price="249" data-type="Oil">Add
+            to Cart</a>
+        </div>
+      </div>
 
-            <div class="product-card">
-                <img src="https://via.placeholder.com/300x180?text=Protein+Powder" alt="Protein Powder">
-                <div class="product-info">
-                    <h3>Protein Powder</h3>
-                    <p>Nutritional supplement for energy & recovery.</p>
-                    <p class="price">₹599</p>
-                    <a href="#" class="add-btn" data-name="Protein Powder" data-price="599" data-type="Supplement">Add
-                        to Cart</a>
-                </div>
-            </div>
+      <div class="product-card">
+        <img src="https://via.placeholder.com/300x180?text=Protein+Powder" alt="Protein Powder">
+        <div class="product-info">
+          <h3>Protein Powder</h3>
+          <p>Nutritional supplement for energy & recovery.</p>
+          <p class="price">₹599</p>
+          <a href="#" class="add-btn" data-name="Protein Powder" data-price="599" data-type="Supplement">Add
+            to Cart</a>
+        </div>
+      </div>
 
-            <div class="product-card">
-                <img src="https://via.placeholder.com/300x180?text=Nasal+Spray" alt="Nasal Spray">
-                <div class="product-info">
-                    <h3>Nasal Spray</h3>
-                    <p>Clears blocked nose and relieves congestion.</p>
-                    <p class="price">₹99</p>
-                    <a href="#" class="add-btn" data-name="Nasal Spray" data-price="99" data-type="Spray">Add to
-                        Cart</a>
-                </div>
-            </div>
+      <div class="product-card">
+        <img src="https://via.placeholder.com/300x180?text=Nasal+Spray" alt="Nasal Spray">
+        <div class="product-info">
+          <h3>Nasal Spray</h3>
+          <p>Clears blocked nose and relieves congestion.</p>
+          <p class="price">₹99</p>
+          <a href="#" class="add-btn" data-name="Nasal Spray" data-price="99" data-type="Spray">Add to
+            Cart</a>
+        </div>
+      </div>
 
-            <div class="product-card">
-                <img src="https://via.placeholder.com/300x180?text=Glucometer+Strips" alt="Glucometer Strips">
-                <div class="product-info">
-                    <h3>Glucometer Strips (50 pcs)</h3>
-                    <p>Compatible strips for sugar monitoring devices.</p>
-                    <p class="price">₹499</p>
-                    <a href="#" class="add-btn" data-name="Glucometer Strips" data-price="499" data-type="Strip">Add to
-                        Cart</a>
-                </div>
-            </div>
+      <div class="product-card">
+        <img src="https://via.placeholder.com/300x180?text=Glucometer+Strips" alt="Glucometer Strips">
+        <div class="product-info">
+          <h3>Glucometer Strips (50 pcs)</h3>
+          <p>Compatible strips for sugar monitoring devices.</p>
+          <p class="price">₹499</p>
+          <a href="#" class="add-btn" data-name="Glucometer Strips" data-price="499" data-type="Strip">Add to
+            Cart</a>
+        </div>
+      </div>
 
-            <div class="product-card">
-                <img src="https://via.placeholder.com/300x180?text=Oral+Rehydration" alt="ORS Pack">
-                <div class="product-info">
-                    <h3>ORS Pack</h3>
-                    <p>Prevents dehydration & restores lost minerals.</p>
-                    <p class="price">₹49</p>
-                    <a href="#" class="add-btn" data-name="ORS Pack" data-price="49" data-type="Supplement">Add to
-                        Cart</a>
-                </div>
-            </div>
+      <div class="product-card">
+        <img src="https://via.placeholder.com/300x180?text=Oral+Rehydration" alt="ORS Pack">
+        <div class="product-info">
+          <h3>ORS Pack</h3>
+          <p>Prevents dehydration & restores lost minerals.</p>
+          <p class="price">₹49</p>
+          <a href="#" class="add-btn" data-name="ORS Pack" data-price="49" data-type="Supplement">Add to
+            Cart</a>
+        </div>
+      </div>
 
-       
+
 
     </div>
   </section>
@@ -373,6 +420,43 @@
     <p id="cart-message">Item added to cart</p>
     <button onclick="window.location.href='cart.html'">Go to Cart</button>
   </div>
+  <footer class="footer">
+    <div class="footer-wrapper">
+      <div class="footer-box">
+        <h3>🌿 Our Philosophy</h3>
+        <p>We believe health isn't just about medicines. It's about movement, nutrition, peace of mind, and small daily
+          habits. At HealthCare+, we’re here to support all of it.</p>
+      </div>
+
+      <div class="footer-box">
+        <h3>📦 Packed with Care</h3>
+        <p>Every product is handled by trained professionals, sanitized, and packed with love. Because we know your
+          health deserves attention to the smallest details.</p>
+      </div>
+
+      <div class="footer-box">
+        <h3>🕒 Open Always</h3>
+        <p>Health emergencies don’t follow business hours. That's why we're available 24x7 — no waiting, no worries.
+          Just care, whenever you need it.</p>
+      </div>
+
+      <div class="footer-box">
+        <h3>✨ Little Reminders</h3>
+        <ul>
+          <li>• Drink 2–3 liters of water daily</li>
+          <li>• Avoid skipping breakfast</li>
+          <li>• Keep moving — even a 10-minute walk helps</li>
+          <li>• Your body hears everything your mind says — be kind</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-tagline">
+      <p>🧡 Built for health. Backed by science. Delivered with heart.</p>
+      <p>© 2025 HealthCare+ – Making Every Dose Count</p>
+    </div>
+  </footer>
+
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
