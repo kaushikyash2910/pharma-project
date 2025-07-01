@@ -5,138 +5,82 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Doctor's Advice | Your Pharma Website</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
   <style>
-    body {
-      font-family: 'Poppins', sans-serif;
+    :root {
+      --primary: #2e7d32;
+      --secondary: #66bb6a;
+      --bg-gradient: linear-gradient(to right, #e0f7fa, #e8f5e9);
+      --card-bg: #ffffff;
+      --shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+      --text-dark: #333;
+      --text-muted: #555;
+      --accent: #00897b;
+    }
+
+    * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      background: linear-gradient(to right, #dcedc8, #b2dfdb);
-      color: #333;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--bg-gradient);
+      color: var(--text-dark);
+      line-height: 1.8;
     }
 
     header,
     section,
     footer {
-      background-color: #ffffff;
+      background-color: var(--card-bg);
       margin: 30px auto;
       max-width: 1000px;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: var(--shadow);
     }
 
-    h1,
-    h2,
+    header {
+      text-align: center;
+    }
+
+    h1 {
+      color: var(--primary);
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      color: var(--primary);
+      margin-bottom: 16px;
+    }
+
     h3 {
-      color: #2e7d32;
+      color: var(--accent);
+      margin-top: 24px;
+    }
+
+    p {
+      margin-bottom: 16px;
+      color: var(--text-muted);
     }
 
     .doctor-profile {
       display: flex;
       align-items: center;
-      gap: 20px;
-
+      gap: 24px;
+      margin-top: 20px;
     }
 
     img {
       width: 120px;
       height: 120px;
       border-radius: 50%;
-      border: 3px solid #2e7d32;
+      border: 4px solid var(--secondary);
+      object-fit: cover;
     }
-
-    ul {
-      padding-left: 20px;
-    }
-
-    li {
-      margin-bottom: 10px;
-    }
-
-    .disclaimer {
-      color: #c62828;
-      font-size: 0.95em;
-      margin-top: 20px;
-    }
-
-    .footer {
-      background-color: #e8f5e9;
-      color: #1b5e20;
-      padding: 60px 20px 20px;
-      font-family: 'Poppins', sans-serif;
-      border-top: 3px solid #a5d6a7;
-    }
-
-    .footer-main {
-      max-width: 1200px;
-      margin: auto;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 40px;
-      padding-bottom: 30px;
-    }
-
-    .footer-brand h2 {
-      font-size: 1.8rem;
-      margin-bottom: 10px;
-      color: #2e7d32;
-    }
-
-    .footer-brand p {
-      font-size: 1rem;
-      line-height: 1.6;
-    }
-
-    .footer-highlight h3,
-    .footer-newsletter h3 {
-      font-size: 1.2rem;
-      margin-bottom: 10px;
-      color: #2e7d32;
-    }
-
-    .footer-highlight ul {
-      padding-left: 20px;
-    }
-
-    .footer-highlight ul li {
-      margin-bottom: 8px;
-      font-size: 0.95rem;
-    }
-
-    .footer-newsletter input {
-      padding: 10px;
-      width: 100%;
-      max-width: 250px;
-      border: 1px solid #a5d6a7;
-      border-radius: 6px;
-      margin-top: 10px;
-      margin-bottom: 10px;
-      font-size: 0.95rem;
-    }
-
-    .footer-newsletter button {
-      background-color: #2e7d32;
-      color: white;
-      padding: 8px 20px;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      transition: background-color 0.3s;
-    }
-
-    .footer-newsletter button:hover {
-      background-color: #1b5e20;
-    }
-
-    .footer-bottom {
-      text-align: center;
-      font-size: 0.9rem;
-      color: #388e3c;
-      border-top: 1px solid #c8e6c9;
-      padding-top: 20px;
-    }
-
     #more {
       display: none;
     }
@@ -158,6 +102,64 @@
     #myBtn:hover {
       background-color: #1b5e20;
     }
+
+    ul {
+      padding-left: 20px;
+      margin-bottom: 10px;
+    }
+
+    li {
+      margin-bottom: 10px;
+      color: var(--text-muted);
+    }
+
+    .disclaimer {
+      background-color: #fff4f4;
+      border-left: 6px solid #d32f2f;
+      color: #b71c1c;
+      padding: 20px;
+      margin-top: 30px;
+      border-radius: 10px;
+      font-size: 0.95rem;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.95em;
+      color: #444;
+    }
+
+    footer a {
+      color: var(--primary);
+      text-decoration: none;
+      margin: 0 10px;
+      font-weight: 500;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+   
+    @media (max-width: 768px) {
+      body {
+        padding: 10px;
+      }
+
+      header,
+      section,
+      footer {
+        padding: 25px;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      .doctor-profile {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
   </style>
 </head>
 
@@ -165,15 +167,14 @@
 
   <header>
     <h1>Doctor's Advice</h1>
-    <p>Welcome to our Doctor's Advice page, where trusted healthcare professionals share essential health tips,
-      medication safety, and lifestyle changes to promote long-term wellness. This content is for educational purposes
-      only and should not replace personalized medical consultations.</p>
+    <p>Trusted healthcare guidance from experienced professionals. Discover actionable advice for your health,
+      lifestyle, and medication use. Please consult your doctor for personal medical decisions.</p>
   </header>
 
   <section>
     <h2>Meet Our Expert</h2>
     <div class="doctor-profile">
-      <img src="dj67fvi8_kk-aggarwal-twitter_295x200_18_May_21.jpg" alt="Dr. K.K. Aggarwal" />
+      <img src="assets/dj67fvi8_kk-aggarwal-twitter_295x200_18_May_21.jpg" alt="Dr. K.K. Aggarwal" />
       <div>
         <h3>Dr. K.K. Aggarwal</h3>
         <div id="content">
@@ -280,50 +281,21 @@
   </section>
 
   <section>
-    <h2>Condition-Based Advice</h2>
-
-    <h3>🩸 Diabetes Management</h3>
-    <p>Managing diabetes requires a combination of diet, medication, and lifestyle discipline. Check your blood sugar
-      levels as prescribed, and follow a low glycemic index diet rich in fiber, vegetables, whole grains, and lean
-      protein. Avoid sugary snacks, white rice, and sodas. Don’t skip meals, and eat smaller portions more frequently.
-      Engage in daily activity like brisk walking or yoga. Stress impacts sugar levels, so practice mindfulness or
-      relaxation techniques. Keep your feet clean and examine them regularly to avoid infections. Stay up to date with
-      eye and kidney checkups. Diabetes can be controlled—not just treated—when you take ownership of your habits.</p>
-
-    <h3>💓 Heart Health</h3>
-    <p>Heart health begins with food and movement. Cut down on saturated fats, salt, and sugar. Embrace fruits, nuts,
-      leafy vegetables, and foods rich in Omega-3 like flaxseed and fish. Avoid tobacco and alcohol. Monitor blood
-      pressure and cholesterol regularly. Exercise at least 150 minutes a week—brisk walking, cycling, swimming, or
-      yoga. Sleep 7–8 hours and manage stress levels through meditation or hobbies. Listen to your body: unexplained
-      fatigue, chest tightness, or dizziness must be reported immediately. Medications like statins and blood thinners
-      must be taken as prescribed. A healthy heart adds years to your life and life to your years.</p>
-
-    <h3>🧠 Mental Wellness</h3>
-    <p>Your mental well-being shapes your ability to function, work, and enjoy life. Make self-care a non-negotiable
-      part of your daily schedule. Engage in something that brings joy—reading, nature walks, creative hobbies. Surround
-      yourself with people who uplift you, and don’t be afraid to seek therapy—it’s a sign of strength. Maintain a
-      gratitude journal to stay grounded. Eat foods rich in omega-3, B-vitamins, and antioxidants. Reduce caffeine and
-      screen time before bed. When you're mentally healthy, you're more equipped to face physical illness, personal
-      setbacks, or professional stress. Mind matters—invest in it.</p>
-  </section>
-
-  <section>
     <h2>Recommended Products</h2>
     <ul>
-      <li><strong>Blood Glucose Monitor:</strong> Keep track of sugar levels easily and accurately. <em>Consult your
-          doctor before choosing a model.</em></li>
-      <li><strong>Omega-3 Capsules:</strong> A natural way to support brain, heart, and joint health.</li>
-      <li><strong>Herbal Cough Syrup:</strong> Non-drowsy relief for both dry and wet cough using trusted Ayurvedic
-        herbs.</li>
+      <li><strong>Blood Glucose Monitor:</strong> Track sugar levels with ease. <em>Consult your doctor before
+          choosing.</em></li>
+      <li><strong>Omega-3 Capsules:</strong> Support for heart, joints, and brain.</li>
+      <li><strong>Herbal Cough Syrup:</strong> Non-drowsy relief for seasonal coughs.</li>
     </ul>
   </section>
 
   <section class="disclaimer">
     <h3>Disclaimer</h3>
-    <p>This content is for general information only and not a substitute for professional medical advice. Always consult
-      your doctor or pharmacist for individual diagnosis or treatment. In case of medical emergency, contact emergency
-      services or visit your nearest hospital.</p>
+    <p>This page is for informational use only. Always consult a qualified medical professional for diagnosis or
+      emergency help. Do not rely solely on online advice for health conditions.</p>
   </section>
+
   <footer class="footer">
     <div class="footer-main">
       <div class="footer-brand">
@@ -338,7 +310,6 @@
           <li>✔️ 100% Genuine Medicines</li>
           <li>✔️ Fast & Safe Delivery</li>
           <li>✔️ 24/7 Support & Consultation</li>
-          <li>✔️ Trusted by 1 Lakh+ Users</li>
         </ul>
       </div>
 
@@ -355,24 +326,20 @@
     </div>
   </footer>
   <script> function myFunction() {
-      var dots = document.getElementById("dots");
-      var moreText = document.getElementById("more");
-      var btnText = document.getElementById("myBtn");
+    var dots = document.getElementById("dots");
+    var moreText = document.getElementById("more");
+    var btnText = document.getElementById("myBtn");
 
-      if (dots.style.display === "none") {
-        dots.style.display = "inline";
-        btnText.innerHTML = "Read more";
-        moreText.style.display = "none";
-      } else {
-        dots.style.display = "none";
-        btnText.innerHTML = "Read less";
-        moreText.style.display = "inline";
-      }
-    }</script>
-
-
-
-
+    if (dots.style.display === "none") {
+      dots.style.display = "inline";
+      btnText.innerHTML = "Read more";
+      moreText.style.display = "none";
+    } else {
+      dots.style.display = "none";
+      btnText.innerHTML = "Read less";
+      moreText.style.display = "inline";
+    }
+  }</script>
 </body>
 
 </html>

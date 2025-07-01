@@ -1,3 +1,4 @@
+/* Reset & Base */
 * {
   margin: 0;
   padding: 0;
@@ -7,6 +8,7 @@
 body {
   height: 100vh;
   background: linear-gradient(to right, #dcedc8, #b2dfdb);
+  /* Soft gradient */
   color: #333;
   font-family: 'Poppins', sans-serif;
   display: flex;
@@ -14,6 +16,7 @@ body {
   align-items: center;
 }
 
+/* Shared Box Styling */
 .login,
 .signup {
   background-color: #ffffff;
@@ -31,6 +34,7 @@ body {
   font-size: 2rem;
 }
 
+/* Form Elements */
 label {
   display: block;
   text-align: left;
@@ -56,6 +60,7 @@ input:focus {
   outline: none;
 }
 
+/* Buttons */
 button[type="submit"],
 .btn-sign {
   width: 100%;
@@ -76,6 +81,7 @@ button[type="submit"]:hover,
   background-color: #1b5e20;
 }
 
+/* Links & Text */
 p {
   margin-top: 20px;
   color: #555;
