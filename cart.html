@@ -130,7 +130,7 @@
 
   <div class="cart-actions">
     <button class="clear-btn" onclick="clearCart()">🧹 Clear Cart</button>
-    <button class="checkout-btn" onclick="goToCheckout()">✅ Proceed to Pay</button>
+    <button class="checkout-btn" onclick="goTopayment()">✅ Proceed to Pay</button>
   </div>
 
   <script>
@@ -194,12 +194,12 @@
       }
     }
 
-    function goToCheckout() {
+    function goTopayment() {
       if (cart.length === 0) {
         alert("Your cart is empty!");
         return;
       }
-      window.location.href = "checkout.html";
+      window.location.href = "payment.html";
     }
 
     renderCart();
