@@ -110,28 +110,37 @@
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       const total = parseInt(localStorage.getItem('cartTotal')) || 0;
+      const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  
       const totalSpan = document.getElementById("totalAmount");
       if (totalSpan) totalSpan.innerText = total;
-
+  
       const options = document.querySelectorAll('.option');
-
+  
       options.forEach(option => {
         option.addEventListener('click', () => {
           options.forEach(opt => opt.classList.remove('selected'));
           option.classList.add('selected');
-
+  
           const method = option.getAttribute('data-method');
           localStorage.setItem("selectedPaymentMethod", method);
-
+  
           if (method === "COD") {
+            // ✅ Store cart temporarily for checkout page
+            sessionStorage.setItem("tempCart", JSON.stringify(cart));
+            sessionStorage.setItem("tempCartTotal", total);
+  
+            // ✅ Clear main cart
             localStorage.removeItem("cart");
             localStorage.removeItem("cartTotal");
-            window.location.href = "checkout.html"; // Optional confirmation page
+  
+            // ✅ Redirect to checkout
+            window.location.href = "checkout.html";
             return;
           }
-
+  
           const razorpayOptions = {
-            key: "rzp_test_YourTestKeyHere", // 🔑 Replace with your Razorpay test key
+            key: "rzp_test_YourTestKeyHere", // Replace with your actual Razorpay key
             amount: total * 100,
             currency: "INR",
             name: "HealthCare+",
@@ -158,12 +167,13 @@
               wallet: method === "Wallet"
             }
           };
-
+  
           const rzp = new Razorpay(razorpayOptions);
           rzp.open();
         });
       });
     });
   </script>
+  
 </body>
 </html>

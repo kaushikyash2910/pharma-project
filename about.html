@@ -5,142 +5,160 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About Us - Pharmacy</title>
-
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto&display=swap"
-    rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --green-dark: #1b5e20;
+      --green-light: #e0f2f1;
+      --accent: #2e7d32;
+      --bg-gradient: linear-gradient(to right, #e8f5e9, #b2dfdb);
+      --highlight: #fffde7;
+    }
+
     body {
       margin: 0;
       padding: 0;
       font-family: 'Roboto', sans-serif;
-      background: linear-gradient(to right, #dcedc8, #b2dfdb);
-
+      background: var(--bg-gradient);
       color: #333;
       min-height: 100vh;
     }
 
+    header {
+      background-color: linear-gradient(to right, #e8f5e9, #b2dfdb);
+    }
+
+    header h1 {
+      font-family: 'Poppins', sans-serif;
+      color: var(--green-dark);
+      text-align: center;
+      font-size: 3.5rem;
+      
+    }
+
     .container {
-      max-width: 950px;
-      margin: 50px auto;
+      max-width: 1000px;
+      margin: 40px auto;
       padding: 40px;
-      background: #ffffff;
+      background: #ffffffee;
       border-radius: 20px;
-      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
     }
 
     .container:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 20px 35px rgba(0, 0, 0, 0.2);
-    }
-
-    h1 {
-      font-family: 'Poppins', sans-serif;
-      color: #1b5e20;
-      text-align: center;
-      font-size: 3.5rem;
-      /* margin-bottom: 25px; */
+      transform: translateY(-5px);
     }
 
     h2 {
       font-family: 'Poppins', sans-serif;
-      color: #388e3c;
+      color: var(--accent);
       font-size: 2rem;
       margin-top: 40px;
-      border-left: 5px solid #81c784;
-      padding-left: 10px;
+      position: relative;
+      padding-left: 18px;
     }
 
-    p {
-      color: #4e4e4e;
+    h2::before {
+      content: "";
+      width: 6px;
+      height: 100%;
+      background: var(--accent);
+      position: absolute;
+      left: 0;
+      top: 0;
+      border-radius: 3px;
+    }
+
+    p, li {
       font-size: 1.1rem;
       line-height: 1.8;
-      margin-bottom: 20px;
+      color: #444;
     }
 
     ul {
       padding-left: 30px;
-      color: #555;
     }
 
     ul li {
-      font-size: 1.05rem;
       margin-bottom: 10px;
-      list-style: square;
     }
 
-    blockquote {
-      font-style: italic;
-      color: #2e7d32;
-      background-color: #f1f8e9;
-      border-left: 5px solid #66bb6a;
-      padding: 15px 20px;
+    .highlight-box {
+      background: var(--highlight);
+      border-left: 5px solid #fbc02d;
+      padding: 20px;
       border-radius: 10px;
-      margin: 15px 0;
-      font-size: 1.2rem;
-      position: relative;
+      margin: 20px 0;
     }
 
-    blockquote::before {
-      content: "❝";
-      font-size: 2rem;
-      position: absolute;
-      left: -20px;
-      top: -10px;
-      color: #a5d6a7;
+    .quote-container blockquote {
+      font-style: italic;
+      background: var(--green-light);
+      border-left: 5px solid var(--accent);
+      padding: 16px;
+      margin: 20px 0;
+      border-radius: 10px;
     }
 
-    .quote-container {
-      margin-top: 30px;
-    }
-
-    .cta-button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 12px 24px;
-      background-color: #2e7d32;
-      color: white;
-      text-decoration: none;
-      font-weight: 600;
+    .learn-more-button {
+      display: inline-block;
+      padding: 10px 18px;
+      background-color: var(--green-dark);
+      color: #fff;
+      font-size: 0.9rem;
       font-family: 'Poppins', sans-serif;
-      font-size: 1.1rem;
-      border-radius: 8px;
-      margin: 30px auto 0;
-      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
-      transition: background-color 0.3s ease, transform 0.2s ease;
+      font-weight: 600;
+      border-radius: 6px;
+      margin-top: 30px;
+      text-align: center;
+      text-decoration: none;
+      transition: background 0.3s ease, transform 0.2s ease;
     }
 
-    .cta-button:hover {
-      background-color: #1b5e20;
-      transform: scale(1.03);
-    }
-
-    .cta-button::after {
-      content: " →";
-      font-weight: bold;
-      margin-left: 8px;
+    .learn-more-button:hover {
+      background-color: #0d3f17;
+      transform: scale(1.05);
     }
 
     footer {
       text-align: center;
       font-size: 0.95em;
+      padding: 20px;
+      margin-top: 60px;
+      background: #f1f8e9;
+      color: var(--green-dark);
     }
 
-    p {
-      margin-bottom: 16px;
-    }
-
-    a {
-      color: #2e7d32;
+    footer a {
+      color: var(--green-dark);
       text-decoration: none;
+      font-weight: 500;
     }
 
-    a:hover {
+    footer a:hover {
       text-decoration: underline;
     }
 
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 30px;
+    }
+
+    .gallery img {
+      flex: 1 1 calc(33.333% - 10px);
+      border-radius: 10px;
+      object-fit: cover;
+      width: 100%;
+      height: 200px;
+      transition: transform 0.3s ease;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
 
     @media (max-width: 768px) {
       .container {
@@ -148,16 +166,12 @@
         padding: 20px;
       }
 
-      h1 {
+      header h1 {
         font-size: 2rem;
       }
 
-      h2 {
-        font-size: 1.5rem;
-      }
-
-      .cta-button {
-        font-size: 1rem;
+      .gallery img {
+        flex: 1 1 100%;
       }
     }
   </style>
@@ -166,46 +180,63 @@
 <body>
   <header>
     <h1>About Us</h1>
-</header>
+  </header>
+
   <div class="container">
-   
-    <p>Welcome to our pharmacy! We are dedicated to providing high-quality healthcare products and services to our
-      community. Our team of professionals is committed to ensuring your health and well-being.</p>
-    <p>At our pharmacy, you will find a wide range of medications, health products, and expert advice to help you live a
-      healthier life. Thank you for choosing us as your trusted healthcare partner.</p>
+    <p>Welcome to <strong>HealthCare+ Pharmacy</strong>, your trusted healthcare partner. We are committed to delivering the best medical products and services that meet your needs and enhance your wellbeing.</p>
+
+    <div class="highlight-box">
+      <p><strong>Our Mission:</strong> To simplify access to affordable medicines and healthcare, ensuring quality and care with every order.</p>
+    </div>
 
     <h2>Medicine Overview</h2>
-    <p>We offer a comprehensive selection of medicines, including:</p>
+    <p>We offer a comprehensive range of medications and healthcare products:</p>
     <ul>
-      <li>Prescription medications</li>
-      <li>Over-the-counter drugs</li>
-      <li>Herbal supplements</li>
-      <li>Vitamins and minerals</li>
+      <li>Prescription & Generic Medicines</li>
+      <li>Over-the-counter (OTC) products</li>
+      <li>Herbal & Ayurvedic Supplements</li>
+      <li>Wellness & Personal Care Items</li>
     </ul>
 
     <h2>What Our App Offers</h2>
-    <p>Our pharmacy app is designed to make your healthcare experience seamless and convenient. With our app, you can:
-    </p>
+    <p>With our advanced pharmacy app, you can easily:</p>
     <ul>
-      <li>Order medications online</li>
-      <li>Set reminders for your prescriptions</li>
-      <li>Access expert advice from pharmacists</li>
-      <li>Track your health and wellness goals</li>
+      <li>Place & manage orders anytime</li>
+      <li>Set pill reminders & refill alerts</li>
+      <li>Consult our certified pharmacists</li>
+      <li>Track your wellness journey</li>
     </ul>
 
-    <h2>Customer Quotes</h2>
+    <h2>Why Choose Us</h2>
+    <ul>
+      <li>Fast, secure and reliable deliveries</li>
+      <li>Round-the-clock support & prescription assistance</li>
+      <li>Affordable pricing with regular discounts</li>
+      <li>Genuine medicines from verified suppliers</li>
+    </ul>
+
+    <h2>Customer Testimonials</h2>
     <div class="quote-container">
-      <blockquote>"The pharmacy app has made managing my prescriptions so much easier. Highly recommend!"</blockquote>
-      <blockquote>"Great service and a wide range of products. I always find what I need here."</blockquote>
+      <blockquote>"The HealthCare+ app makes ordering my medications hassle-free. The reminders are a lifesaver!"</blockquote>
+      <blockquote>"Amazing service! Got my medicines delivered the same day. Highly recommended."</blockquote>
     </div>
 
-    <a href="faq.html" class="cta-button">Learn More</a>
+    <h2>Our Team</h2>
+    <p>We are a team of certified pharmacists, tech enthusiasts, and customer service professionals dedicated to improving your healthcare experience.</p>
 
-    <footer>
-      <p>&copy; 2025 PharmaWebsite.com | <a href="PrivacyandCondition.html">Privacy Policy</a> | <a
-          href="PrivacyandCondition.html">Terms & Conditions</a></p>
-    </footer>
+    <h2>Gallery</h2>
+    <div class="gallery">
+      <img src="https://source.unsplash.com/300x200/?pharmacy" alt="Pharmacy" />
+      <img src="https://source.unsplash.com/300x200/?healthcare" alt="Healthcare" />
+      <img src="https://source.unsplash.com/300x200/?medicine" alt="Medicine" />
+    </div>
+
+    <a href="faq.html" class="learn-more-button">Learn More</a>
   </div>
+
+  <footer>
+    <p>&copy; 2025 HealthCare+ Pharmacy | <a href="PrivacyandCondition.html">Privacy Policy</a> | <a href="PrivacyandCondition.html">Terms & Conditions</a></p>
+  </footer>
 </body>
 
 </html>
