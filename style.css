@@ -97,6 +97,18 @@ body {
 }
 #clear-search:hover {
   background-color: #c62828;
+  
+.search-bar {
+  width: 420px;
+  flex-grow: 1;
+  height: 40px;
+  padding: 0 20px;
+  border: 2px solid teal;
+  border-radius: 15px;
+  font-size: 15px;
+  font-family: 'Poppins', sans-serif;
+  background-color: #f1f8e9;
+  outline: none;
 }
 
 /* DROPDOWNS */
