@@ -24,8 +24,7 @@
           <button class="dropbtn">Categories</button>
           <div class="dropdown-content">
             <a href="#" class="category-link" data-filter="General Purpose">General Purpose</a>
-            <a href="#" class="category-link" data-filter="Vitamins and Supplements">Vitamins and
-              Supplements</a>
+            <a href="#" class="category-link" data-filter="Vitamins and Supplements">Vitamins and Supplements</a>
             <a href="#" class="category-link" data-filter="Diabetes">Diabetes</a>
             <a href="#" class="category-link" data-filter="Derma">Derma</a>
             <a href="#" class="category-link" data-filter="Blood Pressure">Blood Pressure</a>
@@ -45,7 +44,6 @@
           <a href="#" class="type-link" data-type="Syrup">Syrup</a>
           <a href="#" class="type-link" data-type="Capsule">Capsule</a>
           <a href="#" class="type-link" data-type="Injection">Injection</a>
-          <a href="#" class="type-link" data-type="Cream">Cream</a>
           <a href="#" class="type-link" data-type="All">Show All</a>
         </div>
       </div>
@@ -57,6 +55,10 @@
       <a href="login.html"><button type="submit"><i class="fa-solid fa-user"></i> Login</button></a>
     </div>
   </header>
+
+  <h2 id="filter-heading" style="text-align:center; font-weight:600; margin-top:20px;">
+    Currently Viewing: All Products
+  </h2>
 
   <div class="container">
     <div class="cards">
@@ -424,13 +426,11 @@
 
     </div>
   </div>
-
   <footer class="footer">
     <div class="footer-container">
       <div class="footer-section brand">
         <h3>HealthCare+</h3>
-        <p>Your trusted partner in wellness. Quality medicines, healthcare products, and AI-powered support –
-          all in one place.</p>
+        <p>Your trusted partner in wellness. Quality medicines, healthcare products, and AI-powered support – all in one place.</p>
       </div>
       <div class="footer-section">
         <h4>Quick Links</h4>
@@ -472,74 +472,30 @@
 
   <script>
     document.addEventListener("DOMContentLoaded", function () {
-      // Search bar placeholder disappear on focus
+      const productCards = document.querySelectorAll(".product-card");
       const searchBar = document.querySelector(".search-bar");
-      const originalPlaceholder = searchBar.placeholder;
+      const filterHeading = document.getElementById("filter-heading");
 
-      searchBar.addEventListener("focus", () => {
-        searchBar.placeholder = "";
-      });
-
-      searchBar.addEventListener("blur", () => {
-        if (searchBar.value === "") {
-          searchBar.placeholder = originalPlaceholder;
-        }
-      });
-
-      // Add to Cart + Quantity Logic
+      // Add to cart functionality
       const buttons = document.querySelectorAll(".add-cart-btn");
-
       buttons.forEach((btn) => {
         btn.addEventListener("click", () => {
           const productCard = btn.closest(".product-card");
-          const name = productCard.querySelector("p:nth-of-type(1)").textContent.split(":")[1].trim();
-          const type = productCard.querySelector("p:nth-of-type(2)").textContent.split(":")[1].trim();
-          const quantity = productCard.querySelector("p:nth-of-type(3)").textContent.split(":")[1].trim();
-          const priceText = productCard.querySelector("p:nth-of-type(4)").textContent.split(":")[1].trim();
+          const name = productCard.querySelector("p:nth-of-type(1)").textContent.split(":" )[1].trim();
+          const type = productCard.querySelector("p:nth-of-type(2)").textContent.split(":" )[1].trim();
+          const quantity = productCard.querySelector("p:nth-of-type(3)").textContent.split(":" )[1].trim();
+          const priceText = productCard.querySelector("p:nth-of-type(4)").textContent.split(":" )[1].trim();
           const price = parseInt(priceText.replace("Rs", ""));
-
           const product = { name, type, quantity, price, quantityAdded: 1 };
+
           let cart = JSON.parse(localStorage.getItem("cart")) || [];
           const existing = cart.find((item) => item.name === name);
-
           if (existing) {
             existing.quantityAdded += 1;
           } else {
             cart.push(product);
           }
-
           localStorage.setItem("cart", JSON.stringify(cart));
-
-          // Replace "Add to Cart" with quantity controls
-          const qtyDiv = document.createElement("div");
-          qtyDiv.classList.add("quantity-control");
-          qtyDiv.innerHTML = 
-                <div>
-                  <button class="minus">-</button>
-                  <span class="qty">${existing ? existing.quantityAdded : 1}</span>
-                  <button class="plus">+</button>
-                </div>
-              ;
-          btn.replaceWith(qtyDiv);
-
-          const updateCart = (change) => {
-            let cart = JSON.parse(localStorage.getItem("cart")) || [];
-            const item = cart.find(p => p.name === name);
-            if (!item) return;
-
-            item.quantityAdded += change;
-            if (item.quantityAdded <= 0) {
-              cart = cart.filter(p => p.name !== name);
-              qtyDiv.replaceWith(btn); // show "Add to Cart" again
-            } else {
-              qtyDiv.querySelector(".qty").textContent = item.quantityAdded;
-            }
-            localStorage.setItem("cart", JSON.stringify(cart));
-          };
-
-          qtyDiv.querySelector(".minus").addEventListener("click", () => updateCart(-1));
-          qtyDiv.querySelector(".plus").addEventListener("click", () => updateCart(1));
-
           showCartPopup(name);
         });
       });
@@ -547,14 +503,54 @@
       function showCartPopup(productName) {
         const popup = document.getElementById("cart-notification");
         const msg = document.getElementById("cart-message");
-
-        msg.textContent = `${productName} added to cart`;
+        msg.textContent = `"${productName}" added to cart`;
         popup.style.display = "block";
-
         setTimeout(() => {
           popup.style.display = "none";
         }, 3000);
       }
+
+      // Category filter
+      const categoryLinks = document.querySelectorAll(".category-link");
+      categoryLinks.forEach(link => {
+        link.addEventListener("click", e => {
+          e.preventDefault();
+          const selectedCategory = link.getAttribute("data-filter");
+          filterHeading.textContent = `Currently Viewing: ${selectedCategory} Products`;
+
+          productCards.forEach(card => {
+            const cardCategory = card.getAttribute("data-category");
+            card.style.display = (selectedCategory === "All" || cardCategory === selectedCategory) ? "block" : "none";
+          });
+        });
+      });
+
+      // Type filter
+      const typeLinks = document.querySelectorAll(".type-link");
+      typeLinks.forEach(link => {
+        link.addEventListener("click", e => {
+          e.preventDefault();
+          const selectedType = link.getAttribute("data-type");
+          filterHeading.textContent = `Currently Viewing: ${selectedType} Products`;
+
+          productCards.forEach(card => {
+            const cardType = card.getAttribute("data-type");
+            card.style.display = (selectedType === "All" || cardType === selectedType) ? "block" : "none";
+          });
+        });
+      });
+
+      // Live search
+      searchBar.addEventListener("input", function () {
+        const searchTerm = searchBar.value.toLowerCase();
+        filterHeading.textContent = searchTerm ? `Search Results for: "${searchTerm}"` : "Currently Viewing: All Products";
+
+        productCards.forEach(card => {
+          const nameElement = card.querySelector("p:nth-of-type(1)");
+          const name = nameElement ? nameElement.textContent.toLowerCase() : "";
+          card.style.display = name.includes(searchTerm) ? "block" : "none";
+        });
+      });
     });
   </script>
 </body>
