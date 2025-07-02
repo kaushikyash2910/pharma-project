@@ -97,6 +97,7 @@ body {
 }
 #clear-search:hover {
   background-color: #c62828;
+}
   
 .search-bar {
   width: 420px;
@@ -360,5 +361,5 @@ body {
 
   .footer-container {
     grid-template-columns: 1fr;
+    } 
   }
-}
