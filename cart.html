@@ -132,27 +132,26 @@
     <button class="clear-btn" onclick="clearCart()">🧹 Clear Cart</button>
     <button class="checkout-btn" onclick="goTopayment()">✅ Proceed to Pay</button>
   </div>
-
   <script>
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
-
+  
     const cartBody = document.getElementById("cart-body");
     const totalCostDiv = document.getElementById("total-cost");
-
+  
     function renderCart() {
       cartBody.innerHTML = "";
       let total = 0;
-
+  
       if (cart.length === 0) {
         cartBody.innerHTML = "<tr><td colspan='5' class='empty'>Your cart is empty.</td></tr>";
         totalCostDiv.textContent = "Total: ₹0";
         return;
       }
-
+  
       cart.forEach((item, index) => {
         const subtotal = item.price * item.quantityAdded;
         total += subtotal;
-
+  
         const row = document.createElement("tr");
         row.innerHTML = `
           <td>${item.name}</td>
@@ -167,16 +166,17 @@
         `;
         cartBody.appendChild(row);
       });
-
+  
       totalCostDiv.textContent = "Total: ₹" + total;
       localStorage.setItem("cart", JSON.stringify(cart));
+      localStorage.setItem("cartTotal", total); // ✅ Ensure latest total is saved
     }
-
+  
     function increaseQty(index) {
       cart[index].quantityAdded += 1;
       renderCart();
     }
-
+  
     function decreaseQty(index) {
       if (cart[index].quantityAdded > 1) {
         cart[index].quantityAdded -= 1;
@@ -185,25 +185,31 @@
       }
       renderCart();
     }
-
+  
     function clearCart() {
       if (confirm("Are you sure you want to clear the cart?")) {
         cart = [];
         localStorage.removeItem("cart");
+        localStorage.removeItem("cartTotal");
         renderCart();
       }
     }
-
+  
     function goTopayment() {
       if (cart.length === 0) {
         alert("Your cart is empty!");
         return;
       }
+  
+      let total = cart.reduce((sum, item) => sum + item.price * item.quantityAdded, 0);
+      localStorage.setItem("cartTotal", total);  // ✅ Save total before redirect
+  
       window.location.href = "payment.html";
     }
-
+  
     renderCart();
   </script>
+  
 
 </body>
 

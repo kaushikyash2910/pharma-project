@@ -139,16 +139,18 @@
   </div>
 
   <script>
-    const cart = JSON.parse(localStorage.getItem('cart')) || [];
     const summaryContainer = document.getElementById('summary-container');
-
+  
+    // Use sessionStorage cart if COD was selected, else use localStorage
+    const cart = JSON.parse(sessionStorage.getItem('tempCart')) || JSON.parse(localStorage.getItem('cart')) || [];
+  
     function renderOrderSummary() {
       if (cart.length === 0) {
         summaryContainer.innerHTML = "<p class='empty-msg'>Your cart is empty. Please add items before checking out.</p>";
         document.getElementById('checkout-form').style.display = 'none';
         return;
       }
-
+  
       let total = 0;
       let tableHTML = `
         <table>
@@ -163,11 +165,11 @@
           </thead>
           <tbody>
       `;
-
+  
       cart.forEach(item => {
         const subtotal = item.price * item.quantityAdded;
         total += subtotal;
-
+  
         tableHTML += `
           <tr>
             <td>${item.name}</td>
@@ -178,25 +180,32 @@
           </tr>
         `;
       });
-
+  
       tableHTML += `
           </tbody>
         </table>
         <div class="total-cost">Total Amount: ₹${total}</div>
       `;
-
+  
       summaryContainer.innerHTML = tableHTML;
     }
-
+  
     document.getElementById('checkout-form').addEventListener('submit', function (e) {
       e.preventDefault();
       alert('✅ Order placed successfully!');
+  
+      // Clear both storage types (in case order came via Razorpay or COD)
       localStorage.removeItem('cart');
-      window.location.href = 'index.html';
+      localStorage.removeItem('cartTotal');
+      sessionStorage.removeItem('tempCart');
+      sessionStorage.removeItem('tempCartTotal');
+  
+      window.location.href = 'home.html';
     });
-
+  
     renderOrderSummary();
   </script>
+  
 </body>
 
 </html>
