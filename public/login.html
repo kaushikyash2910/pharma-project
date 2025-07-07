@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login</title>
+  <link rel="stylesheet" href="login.css">
+</head>
+<body>
+  <div class="login">
+    <h1>Login</h1>
+    <form action="/login" method="POST" onsubmit="return validateLogin()">
+      <label>Username:</label>
+      <input type="text" id="username" name="username" required><br>
+
+      <label>Password:</label>
+      <input type="password" id="password" name="password" required><br>
+
+      <button type="submit">Login</button>
+    </form>
+    <p>Not registered? <a href="signup.html">Sign Up</a></p>
+  </div>
+
+  <script>
+    function validateLogin() {
+      const u = document.getElementById("username").value;
+      const p = document.getElementById("password").value;
+
+      if (!u || !p) {
+        alert("All fields are required.");
+        return false;
+      }
+      return true;
+    }
+  </script>
+</body>
+</html>
