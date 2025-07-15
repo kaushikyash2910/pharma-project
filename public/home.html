@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pharmacy Website</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header class="navbar">
+    <div class="left-nav">
+      <div class="logo">Logo Half</div>
+      <nav class="nav-buttons">
+        <a href="about.html"><button>About us</button></a>
+        <a href="doctorsadvice.html"><button>👨‍⚕️Doctor's Advice</button></a>
+        <div class="dropdown">
+          <button class="dropbtn">Categories</button>
+          <div class="dropdown-content">
+            <a href="#" class="category-link" data-filter="General Purpose">General Purpose</a>
+            <a href="#" class="category-link" data-filter="Vitamins and Supplements">Vitamins and Supplements</a>
+            <a href="#" class="category-link" data-filter="Diabetes">Diabetes</a>
+            <a href="#" class="category-link" data-filter="Derma">Derma</a>
+            <a href="#" class="category-link" data-filter="Blood Pressure">Blood Pressure</a>
+            <a href="#" class="category-link" data-filter="Chronic Disease">Chronic Disease</a>
+            <a href="#" class="category-link" data-filter="All">Show All</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+
+    <div class="nav-container">
+        <div class="center-nav">
+            <input type="text" placeholder="Search For Medicine & Wellness Products"
+                class="search-bar" />
+            <div class="dropdown">
+                <button class="dropbtn">Filters</button>
+                <div class="dropdown-content">
+            <a href="#" class="type-link" data-type="Tablet">Tablet</a>
+            <a href="#" class="type-link" data-type="Syrup">Syrup</a>
+            <a href="#" class="type-link" data-type="Capsule">Capsule</a>
+            <a href="#" class="type-link" data-type="Injection">Injection</a>
+            <a href="#" class="type-link" data-type="All">Show All</a>
+          </div>
+            </div>
+            <button>History</button>
+
+            <div class="right-nav">
+              <a href="login.html" id="login-link">
+                <button type="submit" id="login-button">
+                  <i class="fa-solid fa-user"></i> Login
+                </button>
+              </a>
+            
+              <div id="user-profile" class="profile-dropdown" style="display: none;">
+                <div class="profile-toggle" id="profile-toggle">
+                  <div class="profile-initial" id="profile-initial">U</div>
+                  <span id="user-email">user@example.com</span>
+                  <i class="fa-solid fa-caret-down"></i>
+                </div>
+                <div class="dropdown-logout" id="dropdown-logout" style="display: none;">
+                  <button id="logout-button">Logout</button>
+                </div>
+              </div>
+            </div>
+            
+            
+            
+    </div>
+  </header>
+
+  <h2 id="filter-heading" style="width: 500px;margin-top:20px; margin-left: auto;margin-right: auto;text-align: center;">
+    All Products
+  </h2>
+
+  <div class="container">
+    <div class="cards">
+      <div class="cards">
+        <!-- 1 -->
+        <div class="product-card" data-category="General Purpose" data-type="Tablet">
+          <div class="product-image"><img src="https://picsum.photos/id/1011/300/200" alt="Dolo-650" /></div>
+          <button class="add-cart-btn">Add to cart</button>
+          <div class="product-details">
+            <p><strong>Name:</strong> Dolo-650</p>
+            <p><strong>Type:</strong> Tablet</p>
+            <p><strong>Quantity:</strong>10 Tablets</p>
+            <p><strong>Price:</strong> Rs100</p>
+          </div>
+        </div>
+
+        <!-- 2 -->
+        <div class="product-card" data-category="Blood Pressure" data-type="Tablet">
+          <div class="product-image"><img src="https://picsum.photos/id/1012/300/200" alt="Tazloc 20mg" />
+          </div>
+          <button class="add-cart-btn">Add to cart</button>
+          <div class="product-details">
+            <p><strong>Name:</strong> Tazloc 20mg</p>
+            <p><strong>Type:</strong> Tablet</p>
+            <p><strong>Quantity:</strong>10 Tablets</p>
+            <p><strong>Price:</strong> Rs210</p>
+          </div>
+        </div>
+
+        <!-- 3 -->
+        <div class="product-card" data-category="Diabetes" data-type="Injection">
+          <div class="product-image"><img src="https://picsum.photos/id/1025/300/200" alt="Toujeo" /></div>
+          <button class="add-cart-btn">Add to cart</button>
+          <div class="product-details">
+            <p><strong>Name:</strong> Toujeo</p>
+            <p><strong>Type:</strong> Injection</p>
+            <p><strong>Quantity:</strong>300UI/ml</p>
+            <p><strong>Price:</strong> Rs650</p>
+          </div>
+        </div>
+
+        <!-- 4 -->
+        <div class="product-card" data-category="General Purpose" data-type="Syrup">
+          <div class="product-image"><img src="https://picsum.photos/id/1041/300/200" alt="Benadryl" /></div>
+          <button class="add-cart-btn">Add to cart</button>
+          <div class="product-details">
+            <p><strong>Name:</strong> Benadryl</p>
+            <p><strong>Type:</strong> Syrup</p>
+            <p><strong>Quantity:</strong>200ml</p>
+            <p><strong>Price:</strong> Rs150</p>
+          </div>
+        </div>
+
+        <!-- 5 -->
+        <div class="product-card" data-category="Derma" data-type="Cream">
+          <div class="product-image"><img src="https://picsum.photos/id/1050/300/200" alt="Betnovate" /></div>
+          <button class="add-cart-btn">Add to cart</button>
+          <div class="product-details">
+            <p><strong>Name:</strong> Betnovate</p>
+            <p><strong>Type:</strong> Cream</p>
+            <p><strong>Quantity:</strong>15g</p>
+            <p><strong>Price:</strong> Rs75</p>
+          </div>
+        </div>
+
+        <!-- 6 -->
+        <div class="product-card" data-category="Vitamins and Supplements" data-type="Capsule">
+          <div class="product-image"><img src="https://picsum.photos/id/1049/300/200" alt="Revital H" /></div>
+          <button class="add-cart-btn">Add to cart</button>
+          <div class="product-details">
+            <p><strong>Name:</strong> Revital H</p>
+            <p><strong>Type:</strong> Capsule</p>
+            <p><strong>Quantity:</strong>30 Capsules</p>
+            <p><strong>Price:</strong> Rs299</p>
+          </div>
+        </div>
+
+        <!-- 7 -->
+        <div class="product-card" data-category="Chronic Disease" data-type="Tablet">
+          <div class="product-image"><img src="https://picsum.photos/id/1005/300/200" alt="Thyronorm" /></div>
+          <button class="add-cart-btn">Add to cart</button>
+          <div class="product-details">
+            <p><strong>Name:</strong> Thyronorm</p>
+            <p><strong>Type:</strong> Tablet</p>
+            <p><strong>Quantity:</strong>100 Tablets</p>
+            <p><strong>Price:</strong> Rs180</p>
+          </div>
+        </div>
+
+        <!-- 8 -->
+        <div class="product-card" data-category="Blood Pressure" data-type="Capsule">
+          <div class="product-image"><img src="https://picsum.photos/id/1060/300/200" alt="Amlodipine" />
+          </div>
+          <button class="add-cart-btn">Add to cart</button>
+          <div class="product-details">
+            <p><strong>Name:</strong> Amlodipine</p>
+            <p><strong>Type:</strong> Capsule</p>
+            <p><strong>Quantity:</strong>10 Capsules</p>
+            <p><strong>Price:</strong> Rs90</p>
+          </div>
+        </div>
+
+        <!-- 9 -->
+        <div class="product-card" data-category="Vitamins and Supplements" data-type="Tablet">
+          <div class="product-image"><img src="https://picsum.photos/id/1080/300/200" alt="Shelcal 500" />
+          </div>
+          <button class="add-cart-btn">Add to cart</button>
+          <div class="product-details">
+            <p><strong>Name:</strong> Shelcal 500</p>
+            <p><strong>Type:</strong> Tablet</p>
+            <p><strong>Quantity:</strong>15 Tablets</p>
+            <p><strong>Price:</strong> Rs120</p>
+          </div>
+        </div>
+
+        <!-- 10 -->
+        <div class="product-card" data-category="Derma" data-type="Syrup">
+          <div class="product-image"><img src="https://picsum.photos/id/1075/300/200" alt="Cetrizine" /></div>
+          <button class="add-cart-btn">Add to cart</button>
+          <div class="product-details">
+            <p><strong>Name:</strong> Cetrizine</p>
+            <p><strong>Type:</strong> Syrup</p>
+            <p><strong>Quantity:</strong>100ml</p>
+            <p><strong>Price:</strong> Rs60</p>
+          </div>
+        </div>
+
+        <!-- 11 -->
+        <div class="product-card" data-category="Diabetes" data-type="Tablet">
+          <div class="product-image"><img src="https://picsum.photos/id/1023/300/200" alt="Metformin" /></div>
+          <button class="add-cart-btn">Add to cart</button>
+          <div class="product-details">
+            <p><strong>Name:</strong> Metformin</p>
+            <p><strong>Type:</strong> Tablet</p>
+            <p><strong>Quantity:</strong>20 Tablets</p>
+            <p><strong>Price:</strong> Rs110</p>
+          </div>
+        </div>
+
+        <!-- 12 -->
+        <div class="product-card" data-category="Chronic Disease" data-type="Injection">
+          <div class="product-image"><img src="https://picsum.photos/id/109/300/200" alt="Erythropoietin" />
+          </div>
+          <button class="add-cart-btn">Add to cart</button>
+          <div class="product-details">
+            <p><strong>Name:</strong> Erythropoietin</p>
+            <p><strong>Type:</strong> Injection</p>
+            <p><strong>Quantity:</strong>1ml</p>
+            <p><strong>Price:</strong> Rs950</p>
+          </div>
+        </div>
+
+        <!-- 13 -->
+        <div class="product-card" data-category="General Purpose" data-type="Tablet">
+          <div class="product-image"><img src="https://picsum.photos/id/110/300/200" alt="Crocin Advance" />
+          </div>
+          <button class="add-cart-btn">Add to cart</button>
+          <div class="product-details">
+            <p><strong>Name:</strong> Crocin Advance</p>
+            <p><strong>Type:</strong> Tablet</p>
+            <p><strong>Quantity:</strong>15 Tablets</p>
+            <p><strong>Price:</strong> Rs85</p>
+          </div>
+        </div>
+
+        <!-- 14 -->
+        <div class="product-card" data-category="Blood Pressure" data-type="Syrup">
+          <div class="product-image"><img src="https://picsum.photos/id/111/300/200" alt="Carditone" /></div>
+          <button class="add-cart-btn">Add to cart</button>
+          <div class="product-details">
+            <p><strong>Name:</strong> Carditone</p>
+            <p><strong>Type:</strong> Syrup</p>
+            <p><strong>Quantity:</strong>150ml</p>
+            <p><strong>Price:</strong> Rs130</p>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="General Purpose" data-type="Tablet">
+          <div class="product-image"><img src="https://picsum.photos/id/1011/300/200" alt="Dolo-650" /></div>
+          <button class="add-cart-btn">Add to cart</button>
+          <div class="product-details">
+            <p><strong>Name:</strong> Dolo-650</p>
+            <p><strong>Type:</strong> Tablet</p>
+            <p><strong>Quantity:</strong>10 Tablets</p>
+            <p><strong>Price:</strong> Rs100</p>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="Blood Pressure" data-type="Tablet">
+          <div class="product-image"><img src="https://picsum.photos/id/1012/300/200" alt="Tazloc 20mg" />
+          </div>
+          <button class="add-cart-btn">Add to cart</button>
+          <div class="product-details">
+            <p><strong>Name:</strong> Tazloc 20mg</p>
+            <p><strong>Type:</strong> Tablet</p>
+            <p><strong>Quantity:</strong>10 Tablets</p>
+            <p><strong>Price:</strong> Rs210</p>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="Diabetes" data-type="Injection">
+          <div class="product-image"><img src="https://picsum.photos/id/1025/300/200" alt="Toujeo" /></div>
+          <button class="add-cart-btn">Add to cart</button>
+          <div class="product-details">
+            <p><strong>Name:</strong> Toujeo</p>
+            <p><strong>Type:</strong> Injection</p>
+            <p><strong>Quantity:</strong>300UI/ml</p>
+            <p><strong>Price:</strong> Rs650</p>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="General Purpose" data-type="Syrup">
+          <div class="product-image"><img src="https://picsum.photos/id/1041/300/200" alt="Benadryl" /></div>
+          <button class="add-cart-btn">Add to cart</button>
+          <div class="product-details">
+            <p><strong>Name:</strong> Benadryl</p>
+            <p><strong>Type:</strong> Syrup</p>
+            <p><strong>Quantity:</strong>200ml</p>
+            <p><strong>Price:</strong> Rs150</p>
+          </div>
+        </div>
+
+
+        <!-- 19 General Purpose – Tablet -->
+        <div class="product-card" data-category="General Purpose" data-type="Tablet">
+          <div class="product-image"><img
+              src="https://images.unsplash.com/photo-1580281657524-4debdc57d420?auto=format&fit=crop&w=300&q=80"
+              alt="Paracetamol" /></div>
+          <button class="add-cart-btn">Add to cart</button>
+          <div class="product-details">
+            <p><strong>Name:</strong> Paracetamol 500mg</p>
+            <p><strong>Type:</strong> Tablet</p>
+            <p><strong>Quantity:</strong>10 Tablets</p>
+            <p><strong>Price:</strong> Rs50</p>
+          </div>
+        </div>
+
+        <!-- 20 Vitamins – Capsule -->
+        <div class="product-card" data-category="Vitamins and Supplements" data-type="Capsule">
+          <div class="product-image"><img
+              src="https://images.unsplash.com/photo-1580281338982-0e671608ad75?auto=format&fit=crop&w=300&q=80"
+              alt="Vitamin D3" /></div>
+          <button class="add-cart-btn">Add to cart</button>
+          <div class="product-details">
+            <p><strong>Name:</strong> Vitamin D3 60k IU</p>
+            <p><strong>Type:</strong> Capsule</p>
+            <p><strong>Quantity:</strong>4 Capsules</p>
+            <p><strong>Price:</strong> Rs200</p>
+          </div>
+        </div>
+
+        <!-- 21 Diabetes – Injection -->
+        <div class="product-card" data-category="Diabetes" data-type="Injection">
+          <div class="product-image"><img
+              src="https://images.unsplash.com/photo-1592118377489-026e16215c8e?auto=format&fit=crop&w=300&q=80"
+              alt="Insulin Pen" /></div>
+          <button class="add-cart-btn">Add to cart</button>
+          <div class="product-details">
+            <p><strong>Name:</strong> Insulin Glargine Pen</p>
+            <p><strong>Type:</strong> Injection</p>
+            <p><strong>Quantity:</strong>3 ml</p>
+            <p><strong>Price:</strong> Rs850</p>
+          </div>
+        </div>
+
+        <!-- 22 Derma – Cream -->
+        <div class="product-card" data-category="Derma" data-type="Cream">
+          <div class="product-image"><img
+              src="https://images.unsplash.com/photo-1587502536263-6a8a5f31a91f?auto=format&fit=crop&w=300&q=80"
+              alt="Hydrocortisone Cream" /></div>
+          <button class="add-cart-btn">Add to cart</button>
+          <div class="product-details">
+            <p><strong>Name:</strong> Hydrocortisone Cream 15g</p>
+            <p><strong>Type:</strong> Cream</p>
+            <p><strong>Quantity:</strong>15 g</p>
+            <p><strong>Price:</strong> Rs120</p>
+          </div>
+        </div>
+
+        <!-- 23 Blood Pressure – Tablet -->
+        <div class="product-card" data-category="Blood Pressure" data-type="Tablet">
+          <div class="product-image"><img
+              src="https://images.unsplash.com/photo-1592496001022-8a4ec56d2956?auto=format&fit=crop&w=300&q=80"
+              alt="Losartan" /></div>
+          <button class="add-cart-btn">Add to cart</button>
+          <div class="product-details">
+            <p><strong>Name:</strong> Losartan 50mg</p>
+            <p><strong>Type:</strong> Tablet</p>
+            <p><strong>Quantity:</strong>10 Tablets</p>
+            <p><strong>Price:</strong> Rs150</p>
+          </div>
+        </div>
+
+        <!-- 24 Chronic Disease – Tablet -->
+        <div class="product-card" data-category="Chronic Disease" data-type="Tablet">
+          <div class="product-image"><img
+              src="https://images.unsplash.com/photo-1596495577886-d920f1fb805b?auto=format&fit=crop&w=300&q=80"
+              alt="Atorvastatin" /></div>
+          <button class="add-cart-btn">Add to cart</button>
+          <div class="product-details">
+            <p><strong>Name:</strong> Atorvastatin 20mg</p>
+            <p><strong>Type:</strong> Tablet</p>
+            <p><strong>Quantity:</strong>10 Tablets</p>
+            <p><strong>Price:</strong> Rs180</p>
+          </div>
+        </div>
+
+        <!-- 25 General Purpose – Syrup -->
+        <div class="product-card" data-category="General Purpose" data-type="Syrup">
+          <div class="product-image"><img
+              src="https://images.unsplash.com/photo-1580281658274-c8f3b77e797a?auto=format&fit=crop&w=300&q=80"
+              alt="Cough Syrup" /></div>
+          <button class="add-cart-btn">Add to cart</button>
+          <div class="product-details">
+            <p><strong>Name:</strong> Dextromethorphan Syrup</p>
+            <p><strong>Type:</strong> Syrup</p>
+            <p><strong>Quantity:</strong>100 ml</p>
+            <p><strong>Price:</strong> Rs95</p>
+          </div>
+        </div>
+
+        <!-- 26 Vitamins – Tablet -->
+        <div class="product-card" data-category="Vitamins and Supplements" data-type="Tablet">
+          <div class="product-image"><img
+              src="https://images.unsplash.com/photo-1580281657689-88dc60da3f70?auto=format&fit=crop&w=300&q=80"
+              alt="Multivitamin Tablet" /></div>
+          <button class="add-cart-btn">Add to cart</button>
+          <div class="product-details">
+            <p><strong>Name:</strong> Multivitamin Tablet</p>
+            <p><strong>Type:</strong> Tablet</p>
+            <p><strong>Quantity:</strong>30 Tablets</p>
+            <p><strong>Price:</strong> Rs250</p>
+          </div>
+        </div>
+
+        <!-- 27 Diabetes – Tablet -->
+        <div class="product-card" data-category="Diabetes" data-type="Tablet">
+          <div class="product-image"><img
+              src="https://images.unsplash.com/photo-1580281656724-b134734bcd23?auto=format&fit=crop&w=300&q=80"
+              alt="Glimepiride" /></div>
+          <button class="add-cart-btn">Add to cart</button>
+          <div class="product-details">
+            <p><strong>Name:</strong> Glimepiride 2mg</p>
+            <p><strong>Type:</strong> Tablet</p>
+            <p><strong>Quantity:</strong>10 Tablets</p>
+            <p><strong>Price:</strong> Rs90</p>
+          </div>
+        </div>
+
+        <!-- 28 Derma – Syrup -->
+        <div class="product-card" data-category="Derma" data-type="Syrup">
+          <div class="product-image"><img
+              src="https://images.unsplash.com/photo-1580281657454-3b371173c6d0?auto=format&fit=crop&w=300&q=80"
+              alt="Ketoconazole Shampoo" /></div>
+          <button class="add-cart-btn">Add to cart</button>
+          <div class="product-details">
+            <p><strong>Name:</strong> Ketoconazole Shampoo</p>
+            <p><strong>Type:</strong> Syrup</p>
+            <p><strong>Quantity:</strong>100 ml</p>
+            <p><strong>Price:</strong> Rs220</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-section brand">
+        <h3>HealthCare+</h3>
+        <p>Your trusted partner in wellness. Quality medicines, healthcare products, and AI-powered support – all in one place.</p>
+      </div>
+      <div class="footer-section">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="cart.html">Cart</a></li>
+          <li><a href="healthcare.html">HealthCare Products</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Support</h4>
+        <ul>
+          <li><a href="PrivacyandCondition.html">Privacy Policy</a></li>
+          <li><a href="Helpline.html">Help</a></li>
+          <li><a href="PolicyReturn.html">Return Policy</a></li>
+          <li><a href="faq.html">FAQs</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Connect</h4>
+        <p>Email: support@healthcareplus.in</p>
+        <div class="social-icons">
+          <a href="#"><img src="https://img.icons8.com/fluency/28/000000/instagram-new.png" alt="Instagram" /></a>
+          <a href="#"><img src="https://img.icons8.com/fluency/28/000000/facebook-new.png" alt="Facebook" /></a>
+          <a href="#"><img src="https://img.icons8.com/fluency/28/000000/twitter.png" alt="Twitter" /></a>
+          <a href="#"><img src="https://img.icons8.com/fluency/28/000000/linkedin.png" alt="LinkedIn" /></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2025 HealthCare+. All rights reserved.
+    </div>
+  </footer>
+
+  <div id="cart-notification" class="cart-popup">
+    <p id="cart-message">Item added to cart</p>
+    <button onclick="window.location.href='cart.html'">Go to Cart</button>
+  </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const productCards = document.querySelectorAll(".product-card");
+      const searchBar = document.querySelector(".search-bar");
+      const filterHeading = document.getElementById("filter-heading");
+
+      // Add to cart functionality
+      document.querySelectorAll(".add-cart-btn").forEach(button => {
+  button.addEventListener("click", () => {
+    const card = button.closest(".product-card");
+
+    // Extract product info
+    const name = card.querySelector("p:nth-of-type(1)").textContent.split(":")[1].trim();
+    const type = card.querySelector("p:nth-of-type(2)").textContent.split(":")[1].trim();
+    const quantity = card.querySelector("p:nth-of-type(3)").textContent.split(":")[1].trim();
+    const price = parseInt(card.querySelector("p:nth-of-type(4)").textContent.split(":")[1].trim().replace("Rs", ""));
+
+    // Setup cart item
+    const item = { name, type, quantity, price, quantityAdded: 1 };
+
+    // Update localStorage
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const existing = cart.find(p => p.name === name);
+    if (existing) {
+      existing.quantityAdded++;
+    } else {
+      cart.push(item);
+    }
+    localStorage.setItem("cart", JSON.stringify(cart));
+
+    // Replace "Add to Cart" with quantity control
+    const qtyControl = document.createElement("div");
+    qtyControl.className = "quantity-control";
+    qtyControl.innerHTML = `
+      <button class="decrease">-</button>
+      <span class="qty">1</span>
+      <button class="increase">+</button>
+    `;
+    button.replaceWith(qtyControl);
+
+    // Increase quantity
+    qtyControl.querySelector(".increase").addEventListener("click", () => {
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+      const item = cart.find(p => p.name === name);
+      if (item) {
+        item.quantityAdded++;
+        qtyControl.querySelector(".qty").textContent = item.quantityAdded;
+        localStorage.setItem("cart", JSON.stringify(cart));
+      }
+    });
+
+    // Decrease quantity
+    qtyControl.querySelector(".decrease").addEventListener("click", () => {
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+      const index = cart.findIndex(p => p.name === name);
+      if (index > -1) {
+        cart[index].quantityAdded--;
+        if (cart[index].quantityAdded <= 0) {
+          cart.splice(index, 1);
+          localStorage.setItem("cart", JSON.stringify(cart));
+          qtyControl.replaceWith(button); // Revert back to button
+        } else {
+          qtyControl.querySelector(".qty").textContent = cart[index].quantityAdded;
+          localStorage.setItem("cart", JSON.stringify(cart));
+        }
+      }
+    });
+
+    // Optional: Popup
+    showCartPopup(name);
+  });
+});
+
+
+
+      function showCartPopup(productName) {
+        const popup = document.getElementById("cart-notification");
+        const msg = document.getElementById("cart-message");
+        msg.textContent = `"${productName}" added to cart`;
+        popup.style.display = "block";
+        setTimeout(() => {
+          popup.style.display = "none";
+        }, 3000);
+      }
+
+      // Category filter
+      const categoryLinks = document.querySelectorAll(".category-link");
+      categoryLinks.forEach(link => {
+        link.addEventListener("click", e => {
+          e.preventDefault();
+          const selectedCategory = link.getAttribute("data-filter");
+          filterHeading.textContent = `${selectedCategory} `;
+
+          productCards.forEach(card => {
+            const cardCategory = card.getAttribute("data-category");
+            card.style.display = (selectedCategory === "All" || cardCategory === selectedCategory) ? "block" : "none";
+          });
+        });
+      });
+
+      // Type filter
+      const typeLinks = document.querySelectorAll(".type-link");
+      typeLinks.forEach(link => {
+        link.addEventListener("click", e => {
+          e.preventDefault();
+          const selectedType = link.getAttribute("data-type");
+          filterHeading.textContent = `${selectedType} `;
+
+          productCards.forEach(card => {
+            const cardType = card.getAttribute("data-type");
+            card.style.display = (selectedType === "All" || cardType === selectedType) ? "block" : "none";
+          });
+        });
+      });
+
+      // Live search
+      searchBar.addEventListener("input", function () {
+        const searchTerm = searchBar.value.toLowerCase();
+        filterHeading.textContent = searchTerm ? `Search Results for: "${searchTerm}"` : "All Products";
+
+        productCards.forEach(card => {
+          const nameElement = card.querySelector("p:nth-of-type(1)");
+          const name = nameElement ? nameElement.textContent.toLowerCase() : "";
+          card.style.display = name.includes(searchTerm) ? "block" : "none";
+        });
+      });
+    });
+  </script>
+  <script src="home.js"></script>
+</body>
+
+</html>

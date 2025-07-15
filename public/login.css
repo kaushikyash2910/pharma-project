@@ -1,0 +1,101 @@
+/* Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  background: linear-gradient(to right, #dcedc8, #b2dfdb);
+  /* Soft gradient */
+  color: #333;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Shared Box Styling */
+.login,
+.signup {
+  background-color: #ffffff;
+  padding: 40px 35px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  width: 370px;
+  text-align: center;
+}
+
+.login h1,
+.signup h1 {
+  color: #2e7d32;
+  margin-bottom: 24px;
+  font-size: 2rem;
+}
+
+/* Form Elements */
+label {
+  display: block;
+  text-align: left;
+  margin: 12px 0 5px;
+  font-weight: 500;
+  color: #388e3c;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #c8e6c9;
+  border-radius: 6px;
+  background-color: #f9f9f9;
+  transition: border 0.3s;
+}
+
+input:focus {
+  border-color: #66bb6a;
+  outline: none;
+}
+
+/* Buttons */
+button[type="submit"],
+.btn-sign {
+  width: 100%;
+  padding: 12px;
+  background-color: #2e7d32;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover,
+.btn-sign:hover {
+  background-color: #1b5e20;
+}
+
+/* Links & Text */
+p {
+  margin-top: 20px;
+  color: #555;
+}
+
+a {
+  display: inline-block;
+  margin-top: 6px;
+  text-decoration: none;
+  color: #2e7d32;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: #1b5e20;
+}

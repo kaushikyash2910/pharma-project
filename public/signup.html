@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Signup</title>
+  <link rel="stylesheet" href="login.css" />
+  <style>
+    .password-container {
+      position: relative;
+      display: inline-block;
+      width: 100%;
+    }
+
+    .password-container input[type="password"],
+    .password-container input[type="text"] {
+      width: 100%;
+      padding-right: 40px;
+      box-sizing: border-box;
+    }
+
+    .toggle-password {
+      position: absolute;
+      top: 50%;
+      right: 10px;
+      transform: translateY(-50%);
+      cursor: pointer;
+      width: 24px;
+      height: 24px;
+    }
+
+    .strength-meter {
+      font-weight: bold;
+      margin-top: 5px;
+    }
+
+    .weak { color: red; }
+    .medium { color: orange; }
+    .strong { color: green; }
+  </style>
+</head>
+<body>
+  <div class="signup">
+    <h1>Sign up</h1>
+    <form action="/signup" method="POST" onsubmit="return validateSignup()">
+      <label>Username:</label>
+      <input type="text" id="username" name="username" required><br>
+
+      <label>Email:</label>
+      <input type="email" id="email" name="email" required><br>
+
+      <label>Password:</label>
+      <div class="password-container">
+        <input type="password" id="password" name="password" required
+          title="At least 6 characters with 1 lowercase, 1 uppercase, 1 number, and 1 special character.">
+        <img src="/eye-alt-svgrepo-com.svg" class="toggle-password" onclick="togglePassword()" alt="Toggle Password">
+      </div>
+      <div id="strength" class="strength-meter"></div><br>
+
+      <label>Confirm Password:</label>
+      <input type="password" id="confirm" name="confirm" required><br>
+
+      <button type="submit">Sign Up</button>
+    </form>
+    <p>Already a user? <a href="login.html">Login</a></p>
+  </div>
+
+  <script>
+    function togglePassword() {
+      const pwdField = document.getElementById("password");
+      pwdField.type = pwdField.type === "password" ? "text" : "password";
+    }
+
+    function getPasswordStrength(pwd) {
+      let strength = 0;
+      if (pwd.length >= 6) strength++;
+      if (/[a-z]/.test(pwd)) strength++;
+      if (/[A-Z]/.test(pwd)) strength++;
+      if (/\d/.test(pwd)) strength++;
+      if (/[\W_]/.test(pwd)) strength++;
+
+      if (strength <= 2) return { label: "Weak", className: "weak" };
+      if (strength === 3 || strength === 4) return { label: "Medium", className: "medium" };
+      return { label: "Strong", className: "strong" };
+    }
+
+    document.getElementById("password").addEventListener("input", function () {
+      const pwd = this.value;
+      const { label, className } = getPasswordStrength(pwd);
+      const strengthEl = document.getElementById("strength");
+
+      strengthEl.textContent = pwd.length === 0 ? "" : `Strength: ${label}`;
+      strengthEl.className = `strength-meter ${className}`;
+    });
+
+    function validateSignup() {
+      const pwd = document.getElementById("password").value;
+      const confirm = document.getElementById("confirm").value;
+
+      const strongPasswordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{6,}$/;
+
+      if (!strongPasswordRegex.test(pwd)) {
+        alert("Password must be at least 6 characters and include:\n- 1 lowercase letter\n- 1 uppercase letter\n- 1 number\n- 1 special character");
+        return false;
+      }
+
+      if (pwd !== confirm) {
+        alert("Passwords do not match.");
+        return false;
+      }
+
+      return true;
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FAQs | HealthCare+</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+      color: #2e7d32;
+    }
+
+    header {
+      background: linear-gradient(to right, #a5d6a7, #b2dfdb);
+      text-align: center;
+      padding: 40px 15px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+      margin: 0;
+      color: #1b5e20;
+    }
+
+    .faq-container {
+      max-width: 950px;
+      margin: 30px auto;
+      padding: 30px;
+      background: #ffffff;
+      border-radius: 16px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .accordion {
+      background-color: #f1f8e9;
+      color: #1b5e20;
+      cursor: pointer;
+      padding: 16px 20px;
+      width: 100%;
+      border: none;
+      border-radius: 10px;
+      text-align: left;
+      outline: none;
+      font-size: 17px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      margin-bottom: 12px;
+      position: relative;
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.05);
+    }
+
+    .accordion:hover {
+      background-color: #dcedc8;
+    }
+
+    .accordion::after {
+      content: '+';
+      font-size: 24px;
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #2e7d32;
+      transition: transform 0.3s ease;
+    }
+
+    .accordion.active::after {
+      content: '−';
+      font-size: 24px;
+    }
+
+    .panel {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.3s ease;
+      background: #fafafa;
+      border-left: 4px solid #a5d6a7;
+      border-radius: 0 0 10px 10px;
+      margin-top: -8px;
+      box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.04);
+    }
+
+    .panel p {
+      padding: 15px 20px;
+      margin: 0;
+      font-size: 15px;
+      color: #444;
+    }
+
+    footer {
+      background-color: #f1f8e9;
+      color: #2e7d32;
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      .accordion {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Frequently Asked Questions</h1>
+  </header>
+
+  <div class="faq-container">
+
+    <button class="accordion">1. How can I order medicine online?</button>
+    <div class="panel">
+      <p>To order medicine online, browse products, add to your cart, and proceed to checkout. Upload prescription if required.</p>
+    </div>
+
+    <button class="accordion">2. Do I need a prescription for all medicines?</button>
+    <div class="panel">
+      <p>No, only prescription drugs need a valid prescription. OTC medicines don’t.</p>
+    </div>
+
+    <button class="accordion">3. How long does delivery take?</button>
+    <div class="panel">
+      <p>Standard delivery takes 2–3 business days. Express delivery is faster and available in select areas.</p>
+    </div>
+
+    <button class="accordion">4. Can I cancel or return my order?</button>
+    <div class="panel">
+      <p>Yes. You can cancel before dispatch. Returns are accepted within 7 days for damaged or incorrect items.</p>
+    </div>
+
+    <button class="accordion">5. Is my data secure?</button>
+    <div class="panel">
+      <p>Absolutely. Your data is encrypted and protected by strict privacy policies.</p>
+    </div>
+
+    <button class="accordion">6. Are there delivery charges?</button>
+    <div class="panel">
+      <p>Delivery is free for orders over ₹500. A small fee may apply to smaller orders.</p>
+    </div>
+
+    <button class="accordion">7. How can I track my order?</button>
+    <div class="panel">
+      <p>You’ll receive SMS/email with a tracking link after shipment.</p>
+    </div>
+
+    <button class="accordion">8. What if a product is unavailable?</button>
+    <div class="panel">
+      <p>You’ll be notified and offered alternatives or a full refund.</p>
+    </div>
+
+    <button class="accordion">9. Can I reorder the same items?</button>
+    <div class="panel">
+      <p>Yes. Go to your order history and click “Reorder”.</p>
+    </div>
+
+    <button class="accordion">10. Will I receive an invoice?</button>
+    <div class="panel">
+      <p>Yes. It will be emailed and is also available in your account dashboard.</p>
+    </div>
+
+    <button class="accordion">11. Is customer support available?</button>
+    <div class="panel">
+      <p>Our support team is available daily from 9 AM – 9 PM via chat, call, and email.</p>
+    </div>
+
+    <button class="accordion">12. Can I schedule delivery time?</button>
+    <div class="panel">
+      <p>You can mention preferences at checkout, depending on availability.</p>
+    </div>
+
+  </div>
+
+  <footer>
+    &copy; 2025 HealthCare+ Pharmacy. All rights reserved.
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const acc = document.querySelectorAll(".accordion");
+      acc.forEach(btn => {
+        btn.addEventListener("click", function () {
+          this.classList.toggle("active");
+          const panel = this.nextElementSibling;
+          if (panel.style.maxHeight) {
+            panel.style.maxHeight = null;
+          } else {
+            panel.style.maxHeight = panel.scrollHeight + "px";
+          }
+        });
+      });
+    });
+  </script>
+
+</body>
+
+</html>

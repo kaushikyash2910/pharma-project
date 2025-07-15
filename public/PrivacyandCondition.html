@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pharmacy Website | Policies</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #dcedc8, #b2dfdb);
+      margin: 0;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      background-color: #ffffff;
+      border-radius: 16px;
+      padding: 30px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    }
+
+    header {
+      text-align: center;
+      border-bottom: 2px solid #e0f2f1;
+      padding-bottom: 15px;
+      margin-bottom: 30px;
+    }
+
+    header h1 {
+      font-size: 2.2rem;
+      color: #2e7d32;
+    }
+
+    h2 {
+      text-align: center;
+      color: #2e7d32;
+      margin-bottom: 25px;
+    }
+
+    .accordion {
+      border-top: 1px solid #ccc;
+    }
+
+    .accordion-item {
+      border-bottom: 1px solid #ccc;
+    }
+
+    .accordion-header {
+      background-color: #e8f5e9;
+      color: #2e7d32;
+      cursor: pointer;
+      padding: 15px 20px;
+      width: 100%;
+      border: none;
+      text-align: left;
+      outline: none;
+      font-size: 1.1rem;
+      transition: background-color 0.3s ease;
+    }
+
+    .accordion-header:hover {
+      background-color: #c8e6c9;
+    }
+
+    .accordion-content {
+      padding: 0 20px 15px;
+      display: none;
+      background-color: #f1f8e9;
+      color: #333;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      transition: all 0.3s ease;
+    }
+
+    .accordion-content.open {
+      display: block;
+    }
+
+    .accordion-content ul {
+      margin: 10px 0;
+      padding-left: 20px;
+    }
+
+    .accordion-content ul li {
+      margin-bottom: 10px;
+      list-style-type: disc;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px 0 0;
+      margin-top: 40px;
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+    footer a {
+      color: #2e7d32;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <h1>Health Care Policies</h1>
+    </header>
+
+    <h2>Our Commitments to You</h2>
+
+    <div class="accordion">
+
+      <!-- Privacy Policy -->
+      <div class="accordion-item">
+        <button class="accordion-header">Privacy Policy</button>
+        <div class="accordion-content">
+          <p>At our pharmacy website, your privacy is our top priority. We are committed to protecting your personal and medical information in compliance with applicable data protection laws.</p>
+          <ul>
+            <li><strong>Information Collection:</strong> We collect your name, contact details, delivery address, and health-related data only for fulfilling orders and improving your experience.</li>
+            <li><strong>Secure Transactions:</strong> All payment information is securely processed using SSL encryption and never stored on our servers.</li>
+            <li><strong>Data Sharing:</strong> We do not share your data with third parties unless required by law or for delivery and payment processing purposes.</li>
+            <li><strong>Cookies:</strong> Our site uses cookies to personalize content, remember cart preferences, and analyze traffic for improvement.</li>
+            <li><strong>User Rights:</strong> You may request data deletion or access your stored information anytime by contacting our support.</li>
+          </ul>
+          <p>By using our services, you consent to this privacy policy. For any concerns, please email: <a href="mailto:support@pharmacy.com">support@pharmacy.com</a>.</p>
+        </div>
+      </div>
+
+      <!-- Terms & Conditions -->
+      <div class="accordion-item">
+        <button class="accordion-header">Terms & Conditions</button>
+        <div class="accordion-content">
+          <p>Welcome to our pharmacy e-commerce platform. By using this website, you agree to abide by the following terms and conditions:</p>
+          <ul>
+            <li><strong>Use of Products:</strong> All products must be used as per instructions or after consulting a healthcare professional. We are not liable for misuse or side effects.</li>
+            <li><strong>Prescription Policy:</strong> Some medicines may require valid prescriptions. We reserve the right to cancel orders lacking appropriate documentation.</li>
+            <li><strong>Return & Refund:</strong> Items may be returned within 7 days if sealed and unused. Perishable or temperature-sensitive goods are not eligible for return.</li>
+            <li><strong>Intellectual Property:</strong> All site content (text, logos, images) is owned by us and cannot be reused without written consent.</li>
+            <li><strong>Changes to Policy:</strong> We may update these terms periodically. Continued use implies acceptance of any updates.</li>
+          </ul>
+          <p>For more information, please review our refund page or contact our support team directly.</p>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <a href="#top">Back to Top</a> |
+      <a href="PrivacyandCondition.html">Privacy Policy</a> |
+      <a href="PolicyReturn.html">Return Policy</a> <br />
+      &copy; 2025 Pharmacy. All rights reserved.
+    </footer>
+  </div>
+
+  <script>
+    document.querySelectorAll('.accordion-header').forEach(button => {
+      button.addEventListener('click', () => {
+        const content = button.nextElementSibling;
+        content.classList.toggle('open');
+      });
+    });
+  </script>
+
+</body>
+</html>

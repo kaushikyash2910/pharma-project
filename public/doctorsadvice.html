@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Doctor's Advice | Your Pharma Website</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --primary: #2e7d32;
+      --secondary: #66bb6a;
+      --bg-gradient: linear-gradient(to right, #dcedc8, #b2dfdb);
+      --card-bg: #ffffff;
+      --shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+      --text-dark: #333;
+      --text-muted: #555;
+      --accent: #00897b;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--bg-gradient);
+      color: var(--text-dark);
+      line-height: 1.8;
+    }
+
+    header,
+    section,
+    footer {
+      background-color: var(--card-bg);
+      margin: 30px auto;
+      max-width: 1000px;
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: var(--shadow);
+    }
+
+    header {
+      text-align: center;
+    }
+
+    h1 {
+      color: var(--primary);
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      color: var(--primary);
+      margin-bottom: 16px;
+    }
+
+    h3 {
+      color: var(--accent);
+      margin-top: 24px;
+    }
+
+    p {
+      margin-bottom: 16px;
+      color: var(--text-muted);
+    }
+
+    .doctor-profile {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      margin-top: 20px;
+    }
+
+    img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 4px solid var(--secondary);
+      object-fit: cover;
+    }
+    #more {
+      display: none;
+    }
+
+    #dots {
+      display: inline;
+    }
+
+    #myBtn {
+      background-color: #2e7d32;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    #myBtn:hover {
+      background-color: #1b5e20;
+    }
+
+    ul {
+      padding-left: 20px;
+      margin-bottom: 10px;
+    }
+
+    li {
+      margin-bottom: 10px;
+      color: var(--text-muted);
+    }
+
+    .disclaimer {
+      background-color: #fff4f4;
+      border-left: 6px solid #d32f2f;
+      color: #b71c1c;
+      padding: 20px;
+      margin-top: 30px;
+      border-radius: 10px;
+      font-size: 0.95rem;
+    }
+
+    .footer {
+  background: linear-gradient(to right, #e0f7fa, #e8f5e9);
+  padding: 50px 30px 20px;
+  color: #2e7d32;
+  font-family: 'Poppins', sans-serif;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
+  border-top: 4px solid #81c784;
+}
+
+.footer-main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-brand,
+.footer-highlight,
+.footer-newsletter {
+  flex: 1 1 300px;
+  background: #ffffffc7;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.07);
+  transition: transform 0.3s ease;
+}
+
+.footer-brand:hover,
+.footer-highlight:hover,
+.footer-newsletter:hover {
+  transform: translateY(-5px);
+}
+
+.footer-brand h2 {
+  font-size: 28px;
+  color: #00796b;
+  margin-bottom: 12px;
+}
+
+.footer-brand p {
+  color: #388e3c;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.footer-highlight h3,
+.footer-newsletter h3 {
+  font-size: 20px;
+  margin-bottom: 12px;
+  color: #1b5e20;
+}
+
+.footer-highlight ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-highlight li {
+  margin-bottom: 10px;
+  font-size: 15px;
+  color: #2e7d32;
+  display: flex;
+  align-items: center;
+}
+
+.footer-highlight li::before {
+  content: '✔️';
+  margin-right: 10px;
+  color: #43a047;
+}
+
+.footer-newsletter p {
+  font-size: 14px;
+  margin-bottom: 12px;
+  color: #4caf50;
+}
+
+.footer-newsletter input[type="email"] {
+  padding: 12px 15px;
+  width: 80%;
+  max-width: 280px;
+  border: 1px solid #a5d6a7;
+  border-radius: 8px;
+  font-size: 14px;
+  margin-bottom: 12px;
+  outline: none;
+  transition: 0.3s ease;
+}
+
+.footer-newsletter input[type="email"]:focus {
+  border-color: #66bb6a;
+  box-shadow: 0 0 5px rgba(102, 187, 106, 0.4);
+}
+
+.footer-newsletter button {
+  background-color: #43a047;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.footer-newsletter button:hover {
+  background-color: #2e7d32;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid #c8e6c9;
+  font-size: 13.5px;
+  color: #388e3c;
+}
+
+.footer-bottom p {
+  margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .footer-main {
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    text-align: center;
+  }
+
+  .footer-newsletter input[type="email"] {
+    width: 100%;
+  }
+}
+
+   
+    @media (max-width: 768px) {
+      body {
+        padding: 10px;
+      }
+
+      header,
+      section,
+      footer {
+        padding: 25px;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      .doctor-profile {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Doctor's Advice</h1>
+    <p>Trusted healthcare guidance from experienced professionals. Discover actionable advice for your health,
+      lifestyle, and medication use. Please consult your doctor for personal medical decisions.</p>
+  </header>
+
+  <section>
+    <h2>Insights from a Healthcare Specialist</h2>
+    <div class="doctor-profile">
+      <img src="dj67fvi8_kk-aggarwal-twitter_295x200_18_May_21.jpg" alt="Dr. K.K. Aggarwal" />
+      <div>
+        <h3>Dr. K.K. Aggarwal</h3>
+        <div id="content">
+          <span id="dots">
+            <p>
+              Qualifications: MBBS: Nagpur University (1979) MD (Medicine):
+              Mahatma Gandhi Institute of Medical Sciences, Wardha (1983) Gold
+              Medalist and Topper: Throughout his medical career at Nagpur
+              University and MGIMS.
+            </p>
+          </span>
+          <span id="more">
+            <h3>Qualifications:</h3>
+            <p>
+              MBBS: Nagpur University (1979) MD (Medicine): Mahatma Gandhi
+              Institute of Medical Sciences, Wardha (1983) Gold Medalist and
+              Topper: Throughout his medical career at Nagpur University and
+              MGIMS.
+            </p>
+
+            <h3>Experience:</h3>
+            <p>
+              Dr. K.K. Aggarwal had an extensive and diverse professional
+              journey: Senior Consultant, Physician, and Cardiologist:
+              Moolchand Medcity, New Delhi (until 2017). He was a pioneer in
+              using clot busters for acute myocardial infarction (1984) and
+              introduced color Doppler echocardiography in North India (1987).
+              National President, Indian Medical Association (IMA):
+              (2016-2017) President, Heart Care Foundation of India (HCFI): He
+              founded and led this organization dedicated to public health.
+              President, Confederation of Medical Associations in Asia and
+              Oceania (CMAAO): (2019-2020) Honorary Secretary-General, Medical
+              Council of India (MCI).
+            </p>
+
+            <h3>Philosophy:</h3>
+            <p>
+              Dr. K.K. Aggarwal's philosophy on health and medicine was deeply
+              rooted in a holistic and public-centric approach, often blending
+              modern medical science with traditional Indian wisdom. Key
+              aspects of his philosophy include: "One Health" Concept: He
+              strongly believed in the interconnectedness of human health with
+              animal health, plant health, and the environment. This reflects
+              the ancient Vedic saying, "VasudhaivaKutumbakam" (the whole
+              world is my family), and
+              "Yathapindetathabrahmande,yathabrahmandetathapinde" (as is the
+              microcosm, so is the macrocosm). He emphasized that the human
+              body is a replica of the universe and that wellness should
+              prioritize this interconnectedness.
+            </p>
+          </span>
+        </div>
+        <button onclick="myFunction()" id="myBtn">Read More</button>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Health & Lifestyle Tips</h2>
+
+    <h3>Healthy Lifestyle</h3>
+    <p>Adopting a healthy lifestyle doesn't require drastic changes—it starts with small, consistent habits. Begin your
+      day with stretching, deep breathing, or a short walk. Eat balanced meals with whole grains, seasonal vegetables,
+      fruits, and lean protein. Avoid processed sugars, fried foods, and excessive salt. Drink plenty of water
+      throughout the day and limit sugary drinks. Get at least 7–8 hours of quality sleep by maintaining a regular
+      bedtime and minimizing screen time before bed. Physical activity is essential—aim for at least 30 minutes a day,
+      five days a week. Quit smoking, reduce alcohol, and take regular breaks to reduce stress. Your mind and body both
+      need attention, so make wellness a lifestyle, not just a goal.</p>
+
+    <h3>Medication Tips</h3>
+    <p>Using medication properly is crucial to effective treatment and safety. Always follow your doctor’s instructions
+      and never stop taking prescribed medicines suddenly. Keep a written list of your medications and their timings.
+      Read labels carefully—look for expiration dates, dosages, and side effect warnings. Avoid mixing medication with
+      alcohol unless specifically allowed. If you forget a dose, don’t double the next one—consult your doctor. Store
+      medicines away from direct sunlight and moisture. For chronic patients, tools like pill organizers and reminders
+      can prevent missed doses. If you experience side effects, don’t stop the medicine without medical advice. Be
+      informed and stay compliant—it makes your treatment more effective.</p>
+
+    <h3>Seasonal Health</h3>
+    <p>Each season brings its own set of health challenges. In summer, protect yourself from dehydration by drinking
+      8–10 glasses of water daily and avoiding outdoor activity during peak heat hours. In the monsoon, guard against
+      infections by consuming freshly cooked food, using mosquito repellents, and avoiding street food. During winter,
+      protect yourself from cold-related issues—layer your clothing, take vitamin C-rich fruits, and avoid sudden
+      temperature exposure. For all seasons, prioritize hygiene: wash your hands frequently, wear weather-appropriate
+      clothing, and boost immunity through nutrition and hydration. Adjusting your routine based on seasonal needs helps
+      you stay resilient year-round.</p>
+
+    <h3>Mental Wellness</h3>
+    <p>Mental health is vital for your overall well-being. Begin by acknowledging your emotions and creating space for
+      self-care. Take breaks during the day, talk to loved ones, and don't hesitate to reach out to a therapist if
+      needed. Practice deep breathing, journaling, or mindful meditation to reduce stress and anxiety. Sleep, diet, and
+      physical activity also impact mental health—stay active, eat clean, and sleep well. Set boundaries with work and
+      screen time, and avoid information overload from social media or news. By making mental wellness a daily priority,
+      you improve your focus, mood, and quality of life.</p>
+
+    <h3>Women’s Health</h3>
+    <p>Women's health requires special attention, especially in areas of hormonal balance, reproductive care, and
+      nutrition. Prioritize regular health checkups, including thyroid tests, breast exams, and pelvic screenings.
+      Maintain menstrual hygiene and track your cycles to detect irregularities early. During menstruation and
+      menopause, stay hydrated, eat iron-rich foods, and get enough calcium to support bone health. If you're pregnant
+      or postpartum, follow your gynecologist’s nutritional and mental health guidelines. Exercise regularly to keep
+      hormones balanced, and manage stress with yoga or relaxation techniques. Don’t ignore fatigue or unexplained
+      symptoms—they could be early signs of treatable conditions.</p>
+  </section>
+
+  <section>
+    <h2>Recommended Products</h2>
+    <ul>
+      <li><strong>Blood Glucose Monitor:</strong> Track sugar levels with ease. <em>Consult your doctor before
+          choosing.</em></li>
+      <li><strong>Omega-3 Capsules:</strong> Support for heart, joints, and brain.</li>
+      <li><strong>Herbal Cough Syrup:</strong> Non-drowsy relief for seasonal coughs.</li>
+    </ul>
+  </section>
+
+  <section class="disclaimer">
+    <h3>Disclaimer</h3>
+    <p>This page is for informational use only. Always consult a qualified medical professional for diagnosis or
+      emergency help. Do not rely solely on online advice for health conditions.</p>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-main">
+      <div class="footer-brand">
+        <h2>HealthCare+</h2>
+        <p>Your wellness, our priority. We deliver trusted pharmacy and wellness products, powered by care and quality.</p>
+      </div>
+  
+      <div class="footer-highlight">
+        <h3>Why Choose Us?</h3>
+        <ul>
+          <li>100% Genuine Medicines</li>
+          <li>Fast & Safe Delivery</li>
+          <li>24/7 Support & Consultation</li>
+        </ul>
+      </div>
+  
+      <div class="footer-newsletter">
+        <h3>Stay Healthy. Stay Updated.</h3>
+        <p>Subscribe to get health tips and special offers straight to your inbox.</p>
+        <input type="email" id="newsletterEmail" placeholder="Enter your email" />
+        <button id="subscribeBtn">Subscribe</button>
+        <p id="subscribeMessage" style="margin-top: 10px; font-size: 14px;"></p>
+      </div>
+      
+    </div>
+  
+    <div class="footer-bottom">
+      <p>© 2025 HealthCare+. All rights reserved. | Designed with ❤️ for healthy living.</p>
+    </div>
+  </footer>
+  
+  <script>
+    // "Read more" toggle functionality
+    function myFunction() {
+      var dots = document.getElementById("dots");
+      var moreText = document.getElementById("more");
+      var btnText = document.getElementById("myBtn");
+  
+      if (dots.style.display === "none") {
+        dots.style.display = "inline";
+        btnText.innerHTML = "Read more";
+        moreText.style.display = "none";
+      } else {
+        dots.style.display = "none";
+        btnText.innerHTML = "Read less";
+        moreText.style.display = "inline";
+      }
+    }
+  
+    // Newsletter Subscribe functionality
+    document.addEventListener("DOMContentLoaded", function () {
+      const subscribeBtn = document.getElementById("subscribeBtn");
+      const emailInput = document.getElementById("newsletterEmail");
+      const message = document.getElementById("subscribeMessage");
+  
+      subscribeBtn.addEventListener("click", function () {
+        const email = emailInput.value.trim();
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  
+        if (email === "") {
+          message.style.color = "#d32f2f";
+          message.textContent = "❌ Please enter your email address.";
+        } else if (!emailPattern.test(email)) {
+          message.style.color = "#d32f2f";
+          message.textContent = "❌ Please enter a valid email address.";
+        } else {
+          message.style.color = "#388e3c";
+          message.textContent = "✅ Thank you for subscribing!";
+          emailInput.value = "";
+  
+          // Optional: clear message after 5 seconds
+          setTimeout(() => {
+            message.textContent = "";
+          }, 5000);
+        }
+      });
+    });
+  </script>
+  
+</body>
+
+</html>
