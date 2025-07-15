@@ -17,7 +17,6 @@
     "url": "https://github.com/kaushikyash2910/pharma-project/issues"
   },
   "homepage": "https://github.com/kaushikyash2910/pharma-project#readme",
-  "description": "",
   "dependencies": {
     "bcrypt": "^6.0.0",
     "body-parser": "^2.2.0",
@@ -29,5 +28,7 @@
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.16.3",
     "nodemon": "^3.1.10"
-  }
+  },
+  "devDependencies": {},
+  "description": ""
 }
