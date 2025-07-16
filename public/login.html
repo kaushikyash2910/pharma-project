@@ -47,10 +47,10 @@
   
         if (res.ok) {
           // ✅ Store user info in localStorage
-          localStorage.setItem("user", JSON.stringify({
-            email: data.email || "",
-            username: data.username || username // fallback to input value
-          }));
+          localStorage.setItem("user", JSON.stringify({ 
+            username: data.username || username
+           }));
+
   
           // ✅ Redirect to home page
           window.location.href = "home.html";

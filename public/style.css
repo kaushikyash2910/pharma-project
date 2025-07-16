@@ -82,7 +82,7 @@ body {
 
 /* SEARCH BAR */
 .search-bar {
-  width: 420px;
+  width: 320px;
   height: 40px;
   padding: 0 12px;
   border: 2px solid teal;
@@ -107,7 +107,7 @@ body {
 }
   
 .search-bar {
-  width: 420px;
+  width: 320px;
   flex-grow: 1;
   height: 40px;
   padding: 0 20px;

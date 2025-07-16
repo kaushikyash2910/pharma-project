@@ -37,49 +37,49 @@
 
 
     <div class="nav-container">
-        <div class="center-nav">
-            <input type="text" placeholder="Search For Medicine & Wellness Products"
-                class="search-bar" />
-            <div class="dropdown">
-                <button class="dropbtn">Filters</button>
-                <div class="dropdown-content">
+      <div class="center-nav">
+        <input type="text" placeholder="Search For Medicine & Products" class="search-bar" />
+        <div class="dropdown">
+          <button class="dropbtn">Filters</button>
+          <div class="dropdown-content">
             <a href="#" class="type-link" data-type="Tablet">Tablet</a>
             <a href="#" class="type-link" data-type="Syrup">Syrup</a>
             <a href="#" class="type-link" data-type="Capsule">Capsule</a>
             <a href="#" class="type-link" data-type="Injection">Injection</a>
             <a href="#" class="type-link" data-type="All">Show All</a>
           </div>
-            </div>
-            <button>History</button>
+        </div>
+        <button>History</button>
 
-            <div class="right-nav">
-              <a href="cart.html"><button>🛒 Cart</button></a>
-              <a href="login.html" id="login-link">
-                <button type="submit" id="login-button">
-                  <i class="fa-solid fa-user"></i> Login
-                </button>
-              </a>
-            
-              <div id="user-profile" class="profile-dropdown" style="display: none;">
-                <div class="profile-toggle" id="profile-toggle">
-                  <div class="profile-initial" id="profile-initial">U</div>
-                  <span id="user-email">user@example.com</span>
-                  <i class="fa-solid fa-caret-down"></i>
-                </div>
-                <div class="dropdown-logout" id="dropdown-logout" style="display: none;">
-                  <button id="logout-button">Logout</button>
-                </div>
-              </div>
+        <div class="right-nav">
+          <a href="cart.html"><button>🛒 Cart</button></a>
+          <a href="login.html" id="login-link">
+            <button type="submit" id="login-button">
+              <i class="fa-solid fa-user"></i> Login
+            </button>
+          </a>
+
+          <div id="user-profile" class="profile-dropdown" style="display: none;">
+            <div class="profile-toggle" id="profile-toggle">
+              <div class="profile-initial" id="profile-initial">U</div>
+              <span id="user-email">user@example.com</span>
+              <i class="fa-solid fa-caret-down"></i>
             </div>
-            
-            
-            
-    </div>
+            <div class="dropdown-logout" id="dropdown-logout" style="display: none;">
+              <button id="logout-button">Logout</button>
+            </div>
+          </div>
+        </div>
+
+
+
+      </div>
   </header>
 
-  <h2 id="filter-heading" style="width: 500px;margin-top:20px; margin-left: auto;margin-right: auto;text-align: center;">
+  <h2 id="filter-heading"
+    style="width: 500px;margin-top:20px; margin-left: auto;margin-right: auto;text-align: center;">
     All Products
-  </h2>
+      </h2>
 
   <div class="container">
     <div class="cards">
@@ -451,7 +451,8 @@
     <div class="footer-container">
       <div class="footer-section brand">
         <h3>HealthCare+</h3>
-        <p>Your trusted partner in wellness. Quality medicines, healthcare products, and AI-powered support – all in one place.</p>
+        <p>Your trusted partner in wellness. Quality medicines, healthcare products, and AI-powered support – all in one
+          place.</p>
       </div>
       <div class="footer-section">
         <h4>Quick Links</h4>
@@ -495,76 +496,67 @@
       const productCards = document.querySelectorAll(".product-card");
       const searchBar = document.querySelector(".search-bar");
       const filterHeading = document.getElementById("filter-heading");
-
+  
       // Add to cart functionality
       document.querySelectorAll(".add-cart-btn").forEach(button => {
-  button.addEventListener("click", () => {
-    const card = button.closest(".product-card");
-
-    // Extract product info
-    const name = card.querySelector("p:nth-of-type(1)").textContent.split(":")[1].trim();
-    const type = card.querySelector("p:nth-of-type(2)").textContent.split(":")[1].trim();
-    const quantity = card.querySelector("p:nth-of-type(3)").textContent.split(":")[1].trim();
-    const price = parseInt(card.querySelector("p:nth-of-type(4)").textContent.split(":")[1].trim().replace("Rs", ""));
-
-    // Setup cart item
-    const item = { name, type, quantity, price, quantityAdded: 1 };
-
-    // Update localStorage
-    let cart = JSON.parse(localStorage.getItem("cart")) || [];
-    const existing = cart.find(p => p.name === name);
-    if (existing) {
-      existing.quantityAdded++;
-    } else {
-      cart.push(item);
-    }
-    localStorage.setItem("cart", JSON.stringify(cart));
-
-    // Replace "Add to Cart" with quantity control
-    const qtyControl = document.createElement("div");
-    qtyControl.className = "quantity-control";
-    qtyControl.innerHTML = `
-      <button class="decrease">-</button>
-      <span class="qty">1</span>
-      <button class="increase">+</button>
-    `;
-    button.replaceWith(qtyControl);
-
-    // Increase quantity
-    qtyControl.querySelector(".increase").addEventListener("click", () => {
-      let cart = JSON.parse(localStorage.getItem("cart")) || [];
-      const item = cart.find(p => p.name === name);
-      if (item) {
-        item.quantityAdded++;
-        qtyControl.querySelector(".qty").textContent = item.quantityAdded;
-        localStorage.setItem("cart", JSON.stringify(cart));
-      }
-    });
-
-    // Decrease quantity
-    qtyControl.querySelector(".decrease").addEventListener("click", () => {
-      let cart = JSON.parse(localStorage.getItem("cart")) || [];
-      const index = cart.findIndex(p => p.name === name);
-      if (index > -1) {
-        cart[index].quantityAdded--;
-        if (cart[index].quantityAdded <= 0) {
-          cart.splice(index, 1);
+        button.addEventListener("click", () => {
+          const card = button.closest(".product-card");
+  
+          const name = card.querySelector("p:nth-of-type(1)").textContent.split(":")[1].trim();
+          const type = card.querySelector("p:nth-of-type(2)").textContent.split(":")[1].trim();
+          const quantity = card.querySelector("p:nth-of-type(3)").textContent.split(":")[1].trim();
+          const price = parseInt(card.querySelector("p:nth-of-type(4)").textContent.split(":")[1].trim().replace("Rs", ""));
+  
+          const item = { name, type, quantity, price, quantityAdded: 1 };
+  
+          let cart = JSON.parse(localStorage.getItem("cart")) || [];
+          const existing = cart.find(p => p.name === name);
+          if (existing) {
+            existing.quantityAdded++;
+          } else {
+            cart.push(item);
+          }
           localStorage.setItem("cart", JSON.stringify(cart));
-          qtyControl.replaceWith(button); // Revert back to button
-        } else {
-          qtyControl.querySelector(".qty").textContent = cart[index].quantityAdded;
-          localStorage.setItem("cart", JSON.stringify(cart));
-        }
-      }
-    });
-
-    // Optional: Popup
-    showCartPopup(name);
-  });
-});
-
-
-
+  
+          const qtyControl = document.createElement("div");
+          qtyControl.className = "quantity-control";
+          qtyControl.innerHTML = `
+            <button class="decrease">-</button>
+            <span class="qty">1</span>
+            <button class="increase">+</button>
+          `;
+          button.replaceWith(qtyControl);
+  
+          qtyControl.querySelector(".increase").addEventListener("click", () => {
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+            const item = cart.find(p => p.name === name);
+            if (item) {
+              item.quantityAdded++;
+              qtyControl.querySelector(".qty").textContent = item.quantityAdded;
+              localStorage.setItem("cart", JSON.stringify(cart));
+            }
+          });
+  
+          qtyControl.querySelector(".decrease").addEventListener("click", () => {
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+            const index = cart.findIndex(p => p.name === name);
+            if (index > -1) {
+              cart[index].quantityAdded--;
+              if (cart[index].quantityAdded <= 0) {
+                cart.splice(index, 1);
+                localStorage.setItem("cart", JSON.stringify(cart));
+                qtyControl.replaceWith(button);
+              } else {
+                qtyControl.querySelector(".qty").textContent = cart[index].quantityAdded;
+                localStorage.setItem("cart", JSON.stringify(cart));
+              }
+            }
+          });
+  
+          showCartPopup(name);
+        });
+      });
+  
       function showCartPopup(productName) {
         const popup = document.getElementById("cart-notification");
         const msg = document.getElementById("cart-message");
@@ -574,7 +566,7 @@
           popup.style.display = "none";
         }, 3000);
       }
-
+  
       // Category filter
       const categoryLinks = document.querySelectorAll(".category-link");
       categoryLinks.forEach(link => {
@@ -582,14 +574,14 @@
           e.preventDefault();
           const selectedCategory = link.getAttribute("data-filter");
           filterHeading.textContent = `${selectedCategory} `;
-
+  
           productCards.forEach(card => {
             const cardCategory = card.getAttribute("data-category");
             card.style.display = (selectedCategory === "All" || cardCategory === selectedCategory) ? "block" : "none";
           });
         });
       });
-
+  
       // Type filter
       const typeLinks = document.querySelectorAll(".type-link");
       typeLinks.forEach(link => {
@@ -597,28 +589,59 @@
           e.preventDefault();
           const selectedType = link.getAttribute("data-type");
           filterHeading.textContent = `${selectedType} `;
-
+  
           productCards.forEach(card => {
             const cardType = card.getAttribute("data-type");
             card.style.display = (selectedType === "All" || cardType === selectedType) ? "block" : "none";
           });
         });
       });
-
+  
       // Live search
       searchBar.addEventListener("input", function () {
         const searchTerm = searchBar.value.toLowerCase();
         filterHeading.textContent = searchTerm ? `Search Results for: "${searchTerm}"` : "All Products";
-
+  
         productCards.forEach(card => {
           const nameElement = card.querySelector("p:nth-of-type(1)");
           const name = nameElement ? nameElement.textContent.toLowerCase() : "";
           card.style.display = name.includes(searchTerm) ? "block" : "none";
         });
       });
+  
+      // 🔐 LOGIN/PROFILE/LOGOUT
+      const loginLink = document.getElementById("login-link");
+      const userProfile = document.getElementById("user-profile");
+      const userNameSpan = document.getElementById("user-email"); // You can rename id to "user-name"
+      const profileInitial = document.getElementById("profile-initial");
+      const logoutButton = document.getElementById("logout-button");
+      const dropdownLogout = document.getElementById("dropdown-logout");
+      const profileToggle = document.getElementById("profile-toggle");
+  
+      const user = JSON.parse(localStorage.getItem("user")); // Should contain username
+  
+      if (user && user.username) {
+        loginLink.style.display = "none";
+        userProfile.style.display = "flex";
+        userNameSpan.textContent = user.username;
+        profileInitial.textContent = user.username[0].toUpperCase();
+      } else {
+        loginLink.style.display = "inline-block";
+        userProfile.style.display = "none";
+      }
+  
+      profileToggle.addEventListener("click", () => {
+        dropdownLogout.style.display =
+          dropdownLogout.style.display === "block" ? "none" : "block";
+      });
+  
+      logoutButton.addEventListener("click", () => {
+        localStorage.removeItem("user");
+        location.reload();
+      });
     });
   </script>
-  <script src="home.js"></script>
+  
 </body>
 
 </html>
